@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative Martian dust horizon</title>
+  <desc id="desc">Original ochre terrain, layered ridges and suspended dust, not a photograph or a plotted landing site.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#171719"/><stop offset=".42" stop-color="#432a28"/><stop offset=".78" stop-color="#986047"/><stop offset="1" stop-color="#b57b58"/></linearGradient>
+    <radialGradient id="sunwash" cx=".7" cy=".52" r=".47"><stop stop-color="#e6b17c" stop-opacity=".55"/><stop offset=".4" stop-color="#bd7554" stop-opacity=".21"/><stop offset="1" stop-color="#b9694e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ridge1" x2="0" y2="1"><stop stop-color="#88523e"/><stop offset="1" stop-color="#4b302b"/></linearGradient>
+    <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#9a6044"/><stop offset=".4" stop-color="#623c34"/><stop offset="1" stop-color="#241f22"/></linearGradient>
+    <pattern id="dust" width="124" height="96" patternUnits="userSpaceOnUse"><circle cx="18" cy="23" r="2" fill="#e6bb8b" opacity=".23"/><circle cx="99" cy="69" r="1.4" fill="#281e20" opacity=".38"/><path d="M44 74l21-3m14-49 13 2" stroke="#e3b587" stroke-opacity=".21"/></pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1800v1000H0z"/><path fill="url(#sunwash)" d="M0 0h1800v1000H0z"/>
+  <circle cx="1262" cy="427" r="92" fill="#ecc397" opacity=".12"/><circle cx="1262" cy="427" r="69" fill="#edc99b" opacity=".22"/>
+  <path d="M0 608c180-74 297-61 447-31 126 26 214 1 334-49 160-66 288-52 429-2 135 48 248 22 358-37 98-53 167-54 232-22v300H0Z" fill="#694238" opacity=".75"/>
+  <path d="M0 681c170-39 291-122 444-96 121 20 203 71 333 56 147-17 253-118 394-78 130 37 225 120 365 79 111-33 194-82 264-58v416H0Z" fill="url(#ridge1)"/>
+  <path d="M0 758c184-27 304-88 471-64 161 24 270 69 422 43 136-24 229-74 380-45 169 32 310 74 527 32v276H0Z" fill="url(#ground)"/>
+  <path d="M0 758c184-27 304-88 471-64 161 24 270 69 422 43 136-24 229-74 380-45 169 32 310 74 527 32v276H0Z" fill="url(#dust)" opacity=".88"/>
+  <g fill="none" stroke="#d99a6b" stroke-opacity=".28"><path d="M206 825c124-42 250-38 372 8m605-30c134-42 255-28 365 19M79 920c191-35 328-17 473 29m719-18c155-36 313-24 439 15" stroke-width="2"/></g>
+  <g fill="#2b2425" opacity=".67"><path d="m248 874 44-29 57 9 28 31-12 16H253Z"/><path d="m1355 898 35-44 62 5 23 30-13 21h-99Z"/><ellipse cx="847" cy="964" rx="29" ry="9"/></g>
+</svg>

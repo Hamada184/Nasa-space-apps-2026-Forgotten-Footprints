@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual component dossier diagram</title>
+  <desc id="desc">A generic, original line illustration of an unidentified instrument module. It does not depict a particular artifact or mission.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#142936"/><stop offset=".52" stop-color="#0b1722"/><stop offset="1" stop-color="#111927"/></linearGradient>
+    <linearGradient id="metal" x2=".8" y2="1"><stop stop-color="#c1b79c"/><stop offset=".5" stop-color="#69747a"/><stop offset="1" stop-color="#2c3941"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0v42" fill="none" stroke="#a4c4c8" stroke-opacity=".08"/></pattern>
+    <pattern id="hatch" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><path d="M0 0v9" stroke="#d7c9a8" stroke-opacity=".38" stroke-width="2"/></pattern>
+    <filter id="soft" x="-.3" y="-.3" width="1.6" height="1.6"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v760H0z"/><path fill="url(#grid)" d="M0 0h1200v760H0z"/>
+  <ellipse cx="612" cy="405" rx="330" ry="230" fill="#7eabb0" opacity=".08" filter="url(#soft)"/>
+  <g fill="none" stroke="#82bdc2" stroke-opacity=".47" stroke-width="2"><ellipse cx="604" cy="385" rx="385" ry="162" transform="rotate(-18 604 385)"/><path d="M170 554 360 523m478-261 164-54M333 201h123m402 422h144" stroke-dasharray="5 10"/></g>
+  <g stroke="#c4c0ad" stroke-width="2" fill="url(#metal)">
+    <path d="m437 315 189-86 188 74-189 93Z"/><path d="M437 315v178l188 86V396Z" fill="#657177"/><path d="m625 396 189-93v178l-189 98Z" fill="#34434c"/>
+    <path d="m467 334 159-72 147 58-160 79Z" fill="url(#hatch)" opacity=".75"/><path d="m459 354 146 67v119l-146-67Z" fill="#59666b"/><path d="m646 423 151-74v110l-151 77Z" fill="#25323a"/>
+    <path d="m488 494 135 63v45l-135-63Z" fill="#958d79"/><path d="m672 534 112-57v38l-112 58Z" fill="#48565e"/>
+  </g>
+  <g fill="none" stroke="#d0a36c" stroke-width="2"><path d="M445 306 282 220h-86m609 7 150-87h82m-398 473v67h-121"/><circle cx="445" cy="306" r="5" fill="#d0a36c"/><circle cx="805" cy="227" r="5" fill="#d0a36c"/><circle cx="625" cy="613" r="5" fill="#d0a36c"/></g>
+  <g fill="#d0a36c"><circle cx="130" cy="210" r="3"/><circle cx="1040" cy="125" r="3"/><circle cx="810" cy="663" r="3"/></g>
+  <g stroke="#9db2b6" stroke-opacity=".42" fill="none"><path d="M84 660h125m-62-62v124M1045 704h90m-45-45v90"/></g>
+</svg>

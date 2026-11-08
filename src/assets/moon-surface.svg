@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative lunar surface panorama</title>
+  <desc id="desc">Original imagined lunar terrain and cratered horizon. This is not a geographic map or an authentic lunar photograph.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0b1720"/><stop offset=".66" stop-color="#17242a"/><stop offset="1" stop-color="#3b4140"/></linearGradient>
+    <radialGradient id="horizonGlow" cx=".62" cy=".8" r=".55"><stop stop-color="#b0ada0" stop-opacity=".32"/><stop offset="1" stop-color="#a7a99f" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#858983"/><stop offset=".35" stop-color="#565f61"/><stop offset="1" stop-color="#222e35"/></linearGradient>
+    <pattern id="dust" width="118" height="89" patternUnits="userSpaceOnUse"><circle cx="17" cy="18" r="1.5" fill="#e6e3d4" opacity=".3"/><circle cx="83" cy="63" r="2" fill="#171f25" opacity=".42"/><circle cx="105" cy="25" r="1" fill="#f4eee0" opacity=".25"/><path d="M29 70l14-2m43-52 9 1" stroke="#d3d1c5" stroke-opacity=".18"/></pattern>
+    <pattern id="stars" width="173" height="151" patternUnits="userSpaceOnUse"><circle cx="22" cy="26" r="1.4" fill="#d8e5e2" opacity=".8"/><circle cx="128" cy="74" r="1" fill="#d8e5e2" opacity=".55"/><circle cx="76" cy="132" r=".8" fill="#d8e5e2" opacity=".7"/></pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1800v1000H0z"/><path fill="url(#stars)" d="M0 0h1800v760H0z"/><path fill="url(#horizonGlow)" d="M0 0h1800v1000H0z"/>
+  <path d="M0 690c175-45 276-130 433-135 153-5 213 98 364 69 113-21 211-122 353-103 120 16 194 100 334 81 118-16 198-99 316-66v464H0Z" fill="#343e41" opacity=".78"/>
+  <path d="M0 770c198-27 305-109 470-101 152 7 245 110 400 98 170-13 257-148 404-109 139 37 222 121 340 86 79-24 124-71 186-80v336H0Z" fill="url(#ground)"/>
+  <path d="M0 770c198-27 305-109 470-101 152 7 245 110 400 98 170-13 257-148 404-109 139 37 222 121 340 86 79-24 124-71 186-80v336H0Z" fill="url(#dust)" opacity=".95"/>
+  <g fill="none" stroke="#d9d7c9" stroke-opacity=".25"><path d="M189 831c122-57 244-53 347 7m438-24c136-79 271-70 397 3m-1267 97c190-47 327-31 471 21m565-19c166-57 315-34 448 24" stroke-width="2"/><path d="M1365 719c39-21 72-21 111-4m-1057 20c53-24 98-22 143 5"/></g>
+  <g fill="#1c272d" opacity=".58"><ellipse cx="260" cy="873" rx="49" ry="14"/><ellipse cx="639" cy="930" rx="25" ry="8"/><ellipse cx="1558" cy="867" rx="61" ry="18"/></g>
+  <path d="M0 963c219-18 348 15 518 0 177-16 305-35 474-6 206 35 363 38 523 1 106-25 187-25 285-12v54H0Z" fill="#141f25" opacity=".85"/>
+</svg>

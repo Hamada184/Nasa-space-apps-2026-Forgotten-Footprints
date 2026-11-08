@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract deep-space field</title>
+  <desc id="desc">An original vector star field with a distant ringed world and an unmarked orbital trace. It does not depict a mission or a spacecraft location.</desc>
+  <defs>
+    <radialGradient id="space" cx=".72" cy=".4" r=".78"><stop stop-color="#1b3045"/><stop offset=".44" stop-color="#111b30"/><stop offset="1" stop-color="#060b16"/></radialGradient>
+    <radialGradient id="world" cx=".3" cy=".25" r=".84"><stop stop-color="#e0d4ae"/><stop offset=".22" stop-color="#b7a982"/><stop offset=".5" stop-color="#596879"/><stop offset=".77" stop-color="#26354a"/><stop offset="1" stop-color="#10192a"/></radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d6d0bc" stop-opacity=".05"/><stop offset=".52" stop-color="#c3c2b2" stop-opacity=".55"/><stop offset="1" stop-color="#9ec6d0" stop-opacity=".08"/></linearGradient>
+    <pattern id="stars" width="160" height="139" patternUnits="userSpaceOnUse"><circle cx="13" cy="16" r="1.1" fill="#e5e9de" opacity=".72"/><circle cx="93" cy="31" r="1.7" fill="#d5e5ea" opacity=".7"/><circle cx="137" cy="102" r="1" fill="#ead5b6" opacity=".8"/><circle cx="53" cy="121" r=".8" fill="#dce7ed" opacity=".58"/></pattern>
+    <radialGradient id="nebula"><stop stop-color="#3a6176" stop-opacity=".24"/><stop offset="1" stop-color="#476a82" stop-opacity="0"/></radialGradient>
+    <clipPath id="planetClip"><circle cx="1270" cy="525" r="245"/></clipPath>
+  </defs>
+  <path fill="url(#space)" d="M0 0h1800v1000H0z"/><path fill="url(#stars)" d="M0 0h1800v1000H0z"/><ellipse cx="1288" cy="512" rx="610" ry="470" fill="url(#nebula)"/>
+  <g fill="none" stroke="#a6c4cd" stroke-opacity=".23"><ellipse cx="1270" cy="525" rx="510" ry="132" transform="rotate(-15 1270 525)" stroke-width="3"/><ellipse cx="1270" cy="525" rx="635" ry="224" transform="rotate(18 1270 525)" stroke-opacity=".11"/><path d="M89 804c292-125 465-173 665-121 153 40 269 108 413 114" stroke="#d0a36c" stroke-dasharray="5 15" stroke-opacity=".32"/></g>
+  <ellipse cx="1270" cy="525" rx="355" ry="78" transform="rotate(-15 1270 525)" fill="none" stroke="url(#ring)" stroke-width="42"/>
+  <circle cx="1270" cy="525" r="245" fill="url(#world)"/>
+  <g clip-path="url(#planetClip)" fill="none" stroke="#e3d4ae" stroke-opacity=".25"><path d="M1018 414c94-38 167-34 231-2 73 37 123 38 199 4m-429 67c98-30 177-29 250 9 58 30 104 32 155 12m-400 77c73-30 152-28 218 4 65 31 121 37 196 15" stroke-width="10"/><path d="M1037 377c104 8 145 34 207 31 56-2 106-20 165-7" stroke-width="5" stroke-opacity=".17"/></g>
+  <circle cx="1270" cy="525" r="250" fill="none" stroke="#d6e2d6" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#d0a36c"><circle cx="327" cy="337" r="4"/><circle cx="374" cy="313" r="2"/><circle cx="708" cy="751" r="3"/></g>
+  <path d="M124 222h38m-19-19v38M1537 793h32m-16-16v32" stroke="#c2d1d1" stroke-opacity=".48" fill="none"/>
+</svg>
