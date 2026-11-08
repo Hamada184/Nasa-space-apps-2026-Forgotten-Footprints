@@ -617,6 +617,33 @@
       }
     }
 
+    const menuButton = document.querySelector('.menu-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+
+    if (menuButton && primaryNav) {
+      menuButton.addEventListener('click', function () {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        primaryNav.classList.toggle('is-open', !isOpen);
+      });
+
+      primaryNav.addEventListener('click', function (event) {
+        const targetLink = event.target.closest('a');
+        if (targetLink) {
+          primaryNav.classList.remove('is-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && primaryNav.classList.contains('is-open')) {
+          primaryNav.classList.remove('is-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.focus();
+        }
+      });
+    }
+
     let currentLanguage = 'en';
     languageToggle.addEventListener('click', () => {
       currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
