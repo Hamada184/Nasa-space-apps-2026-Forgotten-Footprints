@@ -11,15 +11,19 @@ Load localization and archive data from local JavaScript files before `i18n.js` 
 ```text
 /
   index.html
+  README.md
+  logo/
   pages/
     archive.html
-    moon.html
-    mars.html
-    deep-space.html
-    timeline.html
-    discovery.html
-    methodology.html
     artifact.html
+    contact.html
+    credits.html
+    deep-space.html
+    discovery.html
+    mars.html
+    methodology.html
+    moon.html
+    timeline.html
   src/
     css/                 base.css, layout.css, platform.css
     js/                  app.js, i18n.js, locales.js, archive-data.js,
@@ -28,10 +32,14 @@ Load localization and archive data from local JavaScript files before `i18n.js` 
     assets/              local SVG illustrations and ASSET-SOURCES.md
   docs/
     ARCHITECTURE.md
+    ARCHITECTURE_AR.md
+    COMPONENTS.md
+    PLAN_ROUTES_TECH.md
+    PROJECT_STRUCTURE.md
     ROADMAP.md
 ```
 
-`index.html` and the gallery/dossier pages load `museum-models.js` before `museum3d.js`. The model file has no DOM dependency; the renderer creates WebGL contexts and procedural textures at runtime. No runtime asset is loaded from the network.
+The site is a multi-page, direct-open experience with ten standalone HTML documents under the root and `pages/` folders. `index.html` and the gallery/dossier pages load `museum-models.js` before `museum3d.js`. The model file has no DOM dependency; the renderer creates WebGL contexts and procedural textures at runtime. No runtime asset is loaded from the network.
 
 ## 3D rendering
 
