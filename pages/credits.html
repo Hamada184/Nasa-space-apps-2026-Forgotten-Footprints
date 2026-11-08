@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111b">
+  <meta name="description" content="Meet the team behind Forgotten Footprints and the making of the project.">
+  <title>Credits — Forgotten Footprints</title>
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="../logo/Pathfinders.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="../logo/Pathfinders.jpeg">
+  <link rel="stylesheet" href="../src/css/base.css?v=20261108-r7">
+  <link rel="stylesheet" href="../src/css/layout.css?v=20261108-r7">
+  <link rel="stylesheet" href="../src/css/platform.css?v=20261108-r7">
+  <style>
+    :root {
+      --credits-surface: rgba(10, 18, 24, 0.88);
+      --credits-card: rgba(12, 21, 29, 0.92);
+      --credits-line: rgba(172, 198, 208, 0.18);
+      --credits-soft: rgba(149, 171, 182, 0.9);
+      --credits-gold: #d7b278;
+      --credits-cyan: #7ed8e4;
+    }
+
+    .credits-intro {
+      background: linear-gradient(90deg, rgba(7, 17, 27, 0.98), rgba(7, 17, 27, 0.82) 40%, rgba(7, 17, 27, 0.18)), url("../src/assets/deep-field.svg") center/cover no-repeat;
+    }
+
+    .credits-lead {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .intro-panel,
+    .mini-panel {
+      background: var(--credits-surface);
+      border: 1px solid var(--credits-line);
+      padding: 28px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-panel::before,
+    .mini-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(126, 216, 228, 0.14), transparent 70%);
+      transform: translate(-18%, -18%);
+    }
+
+    .section-marker {
+      display: inline-block;
+      color: var(--credits-gold);
+      font: 9px var(--mono);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+    }
+
+    .intro-panel h2,
+    .mini-panel h3 {
+      margin: 0 0 10px;
+      position: relative;
+      z-index: 1;
+      font: 400 clamp(28px, 4vw, 44px)/1.08 var(--display);
+      letter-spacing: -0.05em;
+    }
+
+    .intro-panel p,
+    .mini-panel p,
+    .mini-panel li {
+      margin: 0;
+      color: #a4b3ba;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .credit-card {
+      display: grid;
+      gap: 18px;
+      background: var(--credits-card);
+      border: 1px solid var(--credits-line);
+      box-shadow: 0 22px 32px rgba(0, 0, 0, 0.16);
+      padding: 22px 20px 18px;
+      min-height: 100%;
+    }
+
+    .credit-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--credits-line);
+    }
+
+    .person-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      min-height: 30px;
+      padding: 6px 12px;
+      background: rgba(126, 216, 228, 0.08);
+      border: 1px solid rgba(126, 216, 228, 0.42);
+      color: var(--credits-cyan);
+      font: 9px var(--mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .role-tag {
+      color: var(--credits-gold);
+      font: 9px var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .credit-card h3 {
+      margin: 0;
+      font: 400 clamp(28px, 2.5vw, 36px)/1.08 var(--display);
+      letter-spacing: -0.04em;
+    }
+
+    .credit-role {
+      margin: -2px 0 0;
+      color: var(--credits-gold);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .credit-card p {
+      margin: 0;
+      color: #c5d7df;
+      line-height: 1.9;
+    }
+
+    .credit-points {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .credit-points li {
+      position: relative;
+      padding-left: 18px;
+      color: #b0bec5;
+      line-height: 1.8;
+    }
+
+    .credit-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.8em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--credits-gold);
+      box-shadow: 0 0 0 4px rgba(215, 178, 120, 0.12);
+    }
+
+    .mini-panel ul {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mini-panel li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .mini-panel li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.8em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--credits-cyan);
+      box-shadow: 0 0 0 4px rgba(126, 216, 228, 0.12);
+    }
+
+    @media (max-width: 900px) {
+      .credits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credits-lead {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <a class="identity" href="../index.html" aria-label="Forgotten Footprints home">
+      <img class="identity-mark" src="../logo/Pathfinders.jpeg" alt="" aria-hidden="true">
+      <span class="identity-copy"><strong>FORGOTTEN</strong><small>FOOTPRINTS <span> / </span> ARCHIVE</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menu">
+      <span class="menu-glyph" aria-hidden="true">☰</span>
+      <span class="menu-label" data-i18n="menuShort">Menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="../index.html" data-i18n="navHome">Home</a>
+      <a href="archive.html" data-i18n="navArchive">Archive</a>
+      <details class="nav-destinations">
+        <summary data-i18n="navDestinations">Destinations</summary>
+        <div class="nav-destination-menu">
+          <a href="moon.html" data-i18n="moon">Moon</a>
+          <a href="mars.html" data-i18n="mars">Mars</a>
+          <a href="deep-space.html" data-i18n="deepSpace">Deep Space</a>
+        </div>
+      </details>
+      <a href="timeline.html" data-i18n="navTimeline">Timeline</a>
+      <a href="discovery.html" data-i18n="navDiscovery">Discovery</a>
+      <a href="methodology.html" data-i18n="navMethodology">Methodology</a>
+      <a href="artifact.html" data-i18n="navDossier">Dossier</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+      <a href="credits.html" aria-current="page" data-i18n="navCredits">Credits</a>
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">
+        <span class="language-icon" aria-hidden="true">文</span>
+        <span data-language-label>العربية</span>
+      </button>
+    </nav>
+    <div class="header-utility-links" aria-label="Quick links">
+      <a href="contact.html">Contact</a>
+      <a href="credits.html">Credits</a>
+    </div>
+  </header>
+
+  <main id="main" class="platform-main">
+    <section class="page-intro credits-intro">
+      <div class="page-content" style="padding-bottom: 0;">
+        <p class="eyebrow" data-i18n="creditsKicker">Credits</p>
+        <h1 data-i18n="pageTitle">The people behind the project</h1>
+        <p class="lede" data-i18n="pageText">A team of students and collaborators working together to build, research, design, and present this project with care and purpose.</p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="credits-lead">
+        <div class="intro-panel">
+          <span class="section-marker">01 / Team</span>
+          <h2 data-i18n="leadTitle">Built with dedication, creativity, and shared vision.</h2>
+          <p data-i18n="leadText">This project was created through collaboration, careful research, creative thinking, and hands-on production. Every member contributed in their own way to shape the final experience and its message.</p>
+        </div>
+        <div class="mini-panel">
+          <span class="section-marker">02 / Focus</span>
+          <h3 data-i18n="focusTitle">What we brought</h3>
+          <ul>
+            <li data-i18n="focusItem1">Development and full website creation</li>
+            <li data-i18n="focusItem2">Research and content direction</li>
+            <li data-i18n="focusItem3">Design, storytelling, and presentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="credits-grid">
+        <article class="credit-card">
+          <div class="credit-top">
+            <span class="person-tag">Ahmed</span>
+            <span class="role-tag" data-i18n="roleAhmed">Developer</span>
+          </div>
+          <div>
+            <h3>Ahmed Mohamed Kamal Abdelfattah</h3>
+            <p class="credit-role" data-i18n="roleAhmedLead">Full-stack developer · media producer · project creator</p>
+          </div>
+          <p data-i18n="bioAhmed">I’m a passionate student developer with experience in web development, programming, and digital design. I work with HTML, CSS, JavaScript, and modern web technologies, and I enjoy turning creative ideas into practical solutions. I have built projects such as JobMate AI and contributed to Rise of Us as a co-founder and media team leader. I’m also interested in innovation and problem-solving, especially in technology and space-related projects. I would love to join this team to share my skills, learn from others, collaborate, and contribute to building something meaningful and impactful.</p>
+          <ul class="credit-points">
+            <li data-i18n="pointAhmed1">Designed and built the site from scratch as the main developer.</li>
+            <li data-i18n="pointAhmed2">Handled the website development, structure, and visual implementation.</li>
+            <li data-i18n="pointAhmed3">Produced and edited the presentation video and contributed to the project’s media direction.</li>
+            <li data-i18n="pointAhmed4">Brings experience in web design, digital creativity, and problem-solving.</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <div class="credit-top">
+            <span class="person-tag">Jana</span>
+            <span class="role-tag" data-i18n="roleJana">Team Leader</span>
+          </div>
+          <div>
+            <h3>Jana Atef</h3>
+            <p class="credit-role" data-i18n="roleJanaLead">Team leader · coordinator · strategic support</p>
+          </div>
+          <p data-i18n="bioJana">Jana Atef is a dedicated and inspiring team leader who brings strong organization, communication, and motivation to the group. She helps guide the team’s direction, keeps progress aligned with the project goals, and creates a positive environment where ideas can grow and teamwork can thrive. Her leadership style combines confidence, responsibility, and support, making her a valuable force behind the project’s success.</p>
+          <ul class="credit-points">
+            <li data-i18n="pointJana1">Led the team with clear coordination and communication.</li>
+            <li data-i18n="pointJana2">Kept the project organized and focused on its objectives.</li>
+            <li data-i18n="pointJana3">Supported collaboration and encouraged team unity.</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <div class="credit-top">
+            <span class="person-tag">Abdelrahman</span>
+            <span class="role-tag" data-i18n="roleAbdel">Designer</span>
+          </div>
+          <div>
+            <h3>Abdelrahman Saad</h3>
+            <p class="credit-role" data-i18n="roleAbdelLead">Designer · presentation expert · visual creative</p>
+          </div>
+          <p data-i18n="bioAbdel">Abdelrahman Saad is a highly skilled designer with a strong eye for visual quality, clarity, and presentation. He brings professionalism to every design decision and plays a major role in shaping how the project is presented to others. His work combines creativity, precision, and a strong understanding of aesthetics, making his contribution essential to the project’s polished look and overall impression.</p>
+          <ul class="credit-points">
+            <li data-i18n="pointAbdel1">Created the presentation design with a professional visual identity.</li>
+            <li data-i18n="pointAbdel2">Contributed high-quality design work and polished presentation elements.</li>
+            <li data-i18n="pointAbdel3">Helped elevate the project’s visual communication and professionalism.</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <div class="credit-top">
+            <span class="person-tag">Rania</span>
+            <span class="role-tag" data-i18n="roleRania">Research</span>
+          </div>
+          <div>
+            <h3>Rania Hany</h3>
+            <p class="credit-role" data-i18n="roleRaniaLead">Research lead · ideas developer · content contributor</p>
+          </div>
+          <p data-i18n="bioRania">Rania Hany played an important role in researching, collecting ideas, and shaping the project’s direction. She contributed thoughtful input and helped the team explore meaningful concepts, strong narratives, and research-driven decisions. Her work reflects curiosity, creativity, and an ability to turn ideas into value.</p>
+          <ul class="credit-points">
+            <li data-i18n="pointRania1">Supported research and idea development.</li>
+            <li data-i18n="pointRania2">Contributed to the project’s concept-building and planning.</li>
+            <li data-i18n="pointRania3">Helped strengthen the quality of the project’s content and direction.</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <div class="credit-top">
+            <span class="person-tag">Maryam</span>
+            <span class="role-tag" data-i18n="roleMaryam">Research</span>
+          </div>
+          <div>
+            <h3>Maryam Khaled Mohamed Abdelfattah</h3>
+            <p class="credit-role" data-i18n="roleMaryamLead">Research · ideation · creative support</p>
+          </div>
+          <p data-i18n="bioMaryam">Maryam Khaled contributed to the project through research, brainstorming, and creative thinking. She helped develop ideas that gave the project stronger direction and more depth. Her contribution reflects consistency, curiosity, and commitment to producing meaningful work with the team.</p>
+          <ul class="credit-points">
+            <li data-i18n="pointMaryam1">Helped in research and idea generation.</li>
+            <li data-i18n="pointMaryam2">Contributed to creative discussions and content thinking.</li>
+            <li data-i18n="pointMaryam3">Supported the team’s collaborative development process.</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <div class="credit-top">
+            <span class="person-tag">Zeyad</span>
+            <span class="role-tag" data-i18n="roleZeyad">Ideas</span>
+          </div>
+          <div>
+            <h3>Zeyad Tamer</h3>
+            <p class="credit-role" data-i18n="roleZeyadLead">Ideas · brainstorming · support</p>
+          </div>
+          <p data-i18n="bioZeyad">Zeyad Tamer contributed with ideas and suggestions that helped the team explore directions and refine concepts. His role was lighter and more supportive, focusing on brainstorming and constructive input rather than leading core project responsibilities.</p>
+          <ul class="credit-points">
+            <li data-i18n="pointZeyad1">Shared ideas and suggestions during planning.</li>
+            <li data-i18n="pointZeyad2">Helped with concept discussions and brainstorming.</li>
+            <li data-i18n="pointZeyad3">Supported the team with constructive input.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main section-wrap">
+      <a class="identity footer-identity" href="../index.html">
+        <img class="identity-mark" src="../logo/Pathfinders.jpeg" alt="" aria-hidden="true">
+        <span class="identity-copy"><strong>FORGOTTEN</strong><small>FOOTPRINTS <span> / </span> ARCHIVE</small></span>
+      </a>
+      <p class="footer-message">Build with ❤️ by Ahmed Mohamed Kamal</p>
+      <a class="back-top" href="#main"><span data-i18n="backTop">Back to top</span><span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="footer-bottom section-wrap"><span>© <span data-year></span> <span data-i18n="footerName">Forgotten Footprints</span></span></div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        skip: 'Skip to content',
+        menuShort: 'Menu',
+        navHome: 'Home',
+        navArchive: 'Archive',
+        navDestinations: 'Destinations',
+        moon: 'Moon',
+        mars: 'Mars',
+        deepSpace: 'Deep Space',
+        navTimeline: 'Timeline',
+        navDiscovery: 'Discovery',
+        navMethodology: 'Methodology',
+        navDossier: 'Dossier',
+        navContact: 'Contact',
+        navCredits: 'Credits',
+        creditsKicker: 'Credits',
+        pageTitle: 'The people behind the project',
+        pageText: 'A team of students and collaborators working together to build, research, design, and present this project with care and purpose.',
+        leadTitle: 'Built with dedication, creativity, and shared vision.',
+        leadText: 'This project was created through collaboration, careful research, creative thinking, and hands-on production. Every member contributed in their own way to shape the final experience and its message.',
+        focusTitle: 'What we brought',
+        focusItem1: 'Development and full website creation',
+        focusItem2: 'Research and content direction',
+        focusItem3: 'Design, storytelling, and presentation',
+        roleAhmed: 'Developer',
+        roleAhmedLead: 'Full-stack developer · media producer · project creator',
+        bioAhmed: 'I’m a passionate student developer with experience in web development, programming, and digital design. I work with HTML, CSS, JavaScript, and modern web technologies, and I enjoy turning creative ideas into practical solutions. I have built projects such as JobMate AI and contributed to Rise of Us as a co-founder and media team leader. I’m also interested in innovation and problem-solving, especially in technology and space-related projects. I would love to join this team to share my skills, learn from others, collaborate, and contribute to building something meaningful and impactful.',
+        pointAhmed1: 'Designed and built the site from scratch as the main developer.',
+        pointAhmed2: 'Handled the website development, structure, and visual implementation.',
+        pointAhmed3: 'Produced and edited the presentation video and contributed to the project’s media direction.',
+        pointAhmed4: 'Brings experience in web design, digital creativity, and problem-solving.',
+        roleJana: 'Team Leader',
+        roleJanaLead: 'Team leader · coordinator · strategic support',
+        bioJana: 'Jana Atef is a dedicated and inspiring team leader who brings strong organization, communication, and motivation to the group. She helps guide the team’s direction, keeps progress aligned with the project goals, and creates a positive environment where ideas can grow and teamwork can thrive. Her leadership style combines confidence, responsibility, and support, making her a valuable force behind the project’s success.',
+        pointJana1: 'Led the team with clear coordination and communication.',
+        pointJana2: 'Kept the project organized and focused on its objectives.',
+        pointJana3: 'Supported collaboration and encouraged team unity.',
+        roleAbdel: 'Designer',
+        roleAbdelLead: 'Designer · presentation expert · visual creative',
+        bioAbdel: 'Abdelrahman Saad is a highly skilled designer with a strong eye for visual quality, clarity, and presentation. He brings professionalism to every design decision and plays a major role in shaping how the project is presented to others. His work combines creativity, precision, and a strong understanding of aesthetics, making his contribution essential to the project’s polished look and overall impression.',
+        pointAbdel1: 'Created the presentation design with a professional visual identity.',
+        pointAbdel2: 'Contributed high-quality design work and polished presentation elements.',
+        pointAbdel3: 'Helped elevate the project’s visual communication and professionalism.',
+        roleRania: 'Research',
+        roleRaniaLead: 'Research lead · ideas developer · content contributor',
+        bioRania: 'Rania Hany played an important role in researching, collecting ideas, and shaping the project’s direction. She contributed thoughtful input and helped the team explore meaningful concepts, strong narratives, and research-driven decisions. Her work reflects curiosity, creativity, and an ability to turn ideas into value.',
+        pointRania1: 'Supported research and idea development.',
+        pointRania2: 'Contributed to the project’s concept-building and planning.',
+        pointRania3: 'Helped strengthen the quality of the project’s content and direction.',
+        roleMaryam: 'Research',
+        roleMaryamLead: 'Research · ideation · creative support',
+        bioMaryam: 'Maryam Khaled contributed to the project through research, brainstorming, and creative thinking. She helped develop ideas that gave the project stronger direction and more depth. Her contribution reflects consistency, curiosity, and commitment to producing meaningful work with the team.',
+        pointMaryam1: 'Helped in research and idea generation.',
+        pointMaryam2: 'Contributed to creative discussions and content thinking.',
+        pointMaryam3: 'Supported the team’s collaborative development process.',
+        roleZeyad: 'Ideas',
+        roleZeyadLead: 'Ideas · brainstorming · support',
+        bioZeyad: 'Zeyad Tamer contributed with ideas and suggestions that helped the team explore directions and refine concepts. His role was lighter and more supportive, focusing on brainstorming and constructive input rather than leading core project responsibilities.',
+        pointZeyad1: 'Shared ideas and suggestions during planning.',
+        pointZeyad2: 'Helped with concept discussions and brainstorming.',
+        pointZeyad3: 'Supported the team with constructive input.',
+        backTop: 'Back to top',
+        footerName: 'Forgotten Footprints'
+      },
+      ar: {
+        skip: 'تخطي إلى المحتوى',
+        menuShort: 'القائمة',
+        navHome: 'الرئيسية',
+        navArchive: 'الأرشيف',
+        navDestinations: 'الوجهات',
+        moon: 'القمر',
+        mars: 'المريخ',
+        deepSpace: 'الفراغ',
+        navTimeline: 'الجدول الزمني',
+        navDiscovery: 'الاكتشاف',
+        navMethodology: 'المنهجية',
+        navDossier: 'ملف',
+        navContact: 'تواصل',
+        navCredits: 'الاعتمادات',
+        creditsKicker: 'الاعتمادات',
+        pageTitle: 'الأشخاص وراء المشروع',
+        pageText: 'فريق من الطلاب والمتعاونين يعمل معاً على بناء المشروع وأبحاثه وتصميمه وعرضه بعناية وهدف واضح.',
+        leadTitle: 'تم البناء باهتمام، إبداع، ورؤية مشتركة.',
+        leadText: 'تم إنشاء هذا المشروع من خلال التعاون والبحث الدقيق والتفكير الإبداعي والعمل اليدوي. ساهم كل عضو بطريقته الخاصة في تشكيل التجربة النهائية ورسالتها.',
+        focusTitle: 'ما الذي ساهمنا به',
+        focusItem1: 'التطوير وإنشاء الموقع بالكامل',
+        focusItem2: 'البحث وتوجيه المحتوى',
+        focusItem3: 'التصميم والسرد والعرض',
+        roleAhmed: 'مطور',
+        roleAhmedLead: 'مطور · منتج وسائط · منشئ المشروع',
+        bioAhmed: 'أنا طالب مطور شغوف بخبرة في تطوير الويب والبرمجة والتصميم الرقمي. أعمل مع HTML وCSS وJavaScript والتقنيات الحديثة، وأحب تحويل الأفكار الإبداعية إلى حلول عملية. لقد أنشأت مشاريع مثل JobMate AI وساهمت في Rise of Us كـ co-founder وقائد فريق الإعلام. كما أنني مهتم بالابتكار وحل المشكلات، خاصة في مجالات التكنولوجيا والمشروعات المرتبطة بالفضاء. أود أن أشارك مهاراتي وأتعلم من الآخرين وأتعاون مع الفريق وأساهم في بناء شيء ذا معنى وتأثير.',
+        pointAhmed1: 'صمّم الموقع وبنيه بالكامل من الصفر كأحد المطورين الأساسيين.',
+        pointAhmed2: 'تولى تطوير الموقع وبنائه والواجهة البصرية.',
+        pointAhmed3: 'أنتج وحرر فيديو العرض وساهم في توجيه المحتوى الإعلامي للمشروع.',
+        pointAhmed4: 'يملك خبرة في تصميم الويب والإبداع الرقمي وحل المشكلات.',
+        roleJana: 'قائدة الفريق',
+        roleJanaLead: 'قائدة الفريق · منسقة · دعم استراتيجي',
+        bioJana: 'جنى عاطف هي قائد فريق ملتزم وملهِم، وتتمتع بمنهجية قوية في التنظيم والتواصل وتحفيز الفريق. تساعد في توجيه اتجاه المشروع، وتضمن أن التقدم يتماشى مع أهدافه، وتخلق بيئة إيجابية تسمح للأفكار بالنمو والعمل الجماعي بالنجاح. أسلوب قيادتها يجمع بين الثقة والمسؤولية والدعم، ما يجعلها قوة قيمة خلف نجاح المشروع.',
+        pointJana1: 'قادت الفريق بتنسيق واضح وتواصل فعال.',
+        pointJana2: 'حافظت على تنظيم المشروع وتركيزه على أهدافه.',
+        pointJana3: 'دعم التعاون وشجعت روح الفريق.',
+        roleAbdel: 'مصمم',
+        roleAbdelLead: 'مصمم · خبير عرض · مبدع بصري',
+        bioAbdel: 'عبدالرحمن سعد مصمم متميز ذو عين حادة للجودة البصرية والوضوح والعرض. يضفي احترافية على كل قرار تصميم، ويلعب دوراً كبيراً في تشكيل كيفية تقديم المشروع للآخرين. عمله يجمع بين الإبداع والدقة والفهم العالي للجماليات، ما يجعله عنصراً أساسياً في اللمسة البصرية الاحترافية للمشروع.',
+        pointAbdel1: 'صنع تصميم العرض بشكل احترافي وبهوية مرئية مستقرة.',
+        pointAbdel2: 'ساهم بعمل تصميمي عالي الجودة وعناصر عرض مصقولة.',
+        pointAbdel3: 'ساعد في رفع مستوى التواصل البصري للمشروع واحترافيته.',
+        roleRania: 'بحث',
+        roleRaniaLead: 'رئيسة البحث · تطوير الأفكار · مساهمة محتوى',
+        bioRania: 'رانيا هاني ساهمت في البحث وجمع الأفكار وتوجيه اتجاه المشروع. قدمت اقتراحات مدروسة وساعدت الفريق على استكشاف مفاهيم ذات معنى وسرد قوي وقرارات مبنية على البحث. يعكس عملها الفضول والإبداع والقدرة على تحويل الأفكار إلى قيمة.',
+        pointRania1: 'دعم البحث وتطوير الأفكار.',
+        pointRania2: 'ساهمت في بناء المفاهيم والتخطيط المشروع.',
+        pointRania3: 'ساعدت في تعزيز جودة المحتوى واتجاه المشروع.',
+        roleMaryam: 'بحث',
+        roleMaryamLead: 'بحث · توليد أفكار · دعم إبداعي',
+        bioMaryam: 'مريم خالد ساهمت في المشروع من خلال البحث والعصف الذهني والتفكير الإبداعي. ساعدت في تطوير أفكار أعطت المشروع اتجاهاً أقوى وعمقاً أكبر. يعكس دورها الالتزام والفضول والاستمرارية في إنتاج عمل ذي معنى مع الفريق.',
+        pointMaryam1: 'ساهمت في البحث وتوليد الأفكار.',
+        pointMaryam2: 'مشاركتها في النقاشات الإبداعية وتفكير المحتوى.',
+        pointMaryam3: 'دعمت عملية التطوير التعاونية للفريق.',
+        roleZeyad: 'أفكار',
+        roleZeyadLead: 'أفكار · عصف ذهني · دعم',
+        bioZeyad: 'ساهم زياد تامر بأفكار واقتراحات ساعدت الفريق على استكشاف الاتجاهات وتنقية المفاهيم. كان دوره أخف وأقل مسؤولية، مع التركيز على العصف الذهني والمساهمة البناءة بدل قيادة المهام الأساسية للمشروع.',
+        pointZeyad1: 'شارك بأفكار واقتراحات أثناء التخطيط.',
+        pointZeyad2: 'ساعد في مناقشات المفاهيم والعصف الذهني.',
+        pointZeyad3: 'دعم الفريق بمساهمات بناءة.',
+        backTop: 'العودة للأعلى',
+        footerName: 'Forgotten Footprints'
+      }
+    };
+
+    const languageToggle = document.querySelector('[data-lang-toggle]');
+    const languageLabel = document.querySelector('[data-language-label]');
+
+    function setLanguage(lang) {
+      const isArabic = lang === 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.body.classList.toggle('is-arabic', isArabic);
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      languageLabel.textContent = isArabic ? 'EN' : 'العربية';
+      languageToggle.setAttribute('aria-label', isArabic ? 'Switch to English' : 'تبديل إلى العربية');
+      const nav = document.querySelector('.primary-nav');
+      if (nav) {
+        nav.style.direction = isArabic ? 'rtl' : 'ltr';
+      }
+    }
+
+    let currentLanguage = 'en';
+    languageToggle.addEventListener('click', () => {
+      currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+      setLanguage(currentLanguage);
+    });
+
+    setLanguage(currentLanguage);
+  </script>
+</body>
+</html>

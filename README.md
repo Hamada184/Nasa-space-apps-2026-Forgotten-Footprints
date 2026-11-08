@@ -1,4 +1,3 @@
-# Nasa-space-apps-2026
 # Forgotten Footprints
 
 A bilingual (English/Arabic) interactive space museum and scientific archive about the physical traces of human exploration beyond Earth.

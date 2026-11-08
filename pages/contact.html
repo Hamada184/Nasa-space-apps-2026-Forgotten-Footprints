@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111b">
+  <meta name="description" content="Contact the Forgotten Footprints team by WhatsApp or email.">
+  <title>Contact — Forgotten Footprints</title>
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="../logo/Pathfinders.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="../logo/Pathfinders.jpeg">
+  <link rel="stylesheet" href="../src/css/base.css?v=20261108-r7">
+  <link rel="stylesheet" href="../src/css/layout.css?v=20261108-r7">
+  <link rel="stylesheet" href="../src/css/platform.css?v=20261108-r7">
+  <style>
+    :root {
+      --contact-surface: rgba(12, 23, 31, 0.9);
+      --contact-card: rgba(11, 19, 25, 0.92);
+      --contact-line: rgba(174, 201, 214, 0.18);
+      --contact-soft: rgba(170, 190, 200, 0.75);
+      --contact-gold: #d7b278;
+      --contact-cyan: #7ed8e4;
+    }
+
+    .contact-intro {
+      background: linear-gradient(90deg, rgba(7, 17, 27, 0.97), rgba(7, 17, 27, 0.8) 44%, rgba(7, 17, 27, 0.18)), url("../src/assets/deep-field.svg") center/cover no-repeat;
+    }
+
+    .contact-summary {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .summary-card {
+      background: var(--contact-surface);
+      border: 1px solid var(--contact-line);
+      padding: 28px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 132px;
+      height: 132px;
+      background: radial-gradient(circle, rgba(126, 216, 228, 0.12), transparent 70%);
+      transform: translate(-18%, -18%);
+    }
+
+    .summary-card .section-marker {
+      color: var(--contact-gold);
+      font: 9px var(--mono);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .summary-card h2 {
+      font: 400 clamp(28px, 4vw, 44px)/1.08 var(--display);
+      letter-spacing: -0.05em;
+      margin: 0 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: #a5b4b9;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quick-links {
+      display: grid;
+      align-content: center;
+      gap: 12px;
+    }
+
+    .quick-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      background: rgba(10, 18, 24, 0.8);
+      border: 1px solid var(--contact-line);
+      color: #dfe9eb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .quick-link:hover,
+    .quick-link:focus-visible {
+      border-color: rgba(126, 216, 228, 0.7);
+      transform: translateY(-1px);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .contact-card {
+      display: grid;
+      gap: 18px;
+      background: var(--contact-card);
+      border: 1px solid var(--contact-line);
+      padding: 22px 18px 18px;
+      min-height: 100%;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    .contact-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--contact-line);
+    }
+
+    .person-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 62px;
+      min-height: 28px;
+      padding: 6px 10px;
+      background: rgba(126, 216, 228, 0.08);
+      border: 1px solid rgba(126, 216, 228, 0.42);
+      color: var(--contact-cyan);
+      font: 9px var(--mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .channel-badge {
+      color: var(--contact-gold);
+      font: 9px var(--mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-card h3 {
+      font: 400 clamp(28px, 2.5vw, 38px)/1.1 var(--display);
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-role {
+      margin: -4px 0 0;
+      color: var(--contact-gold);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-details li {
+      display: grid;
+      gap: 6px;
+      padding-top: 4px;
+      border-top: 1px solid rgba(174, 201, 214, 0.1);
+    }
+
+    .contact-details strong {
+      color: #8ea3ad;
+      font: 8px var(--mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .contact-details a,
+    .text-link {
+      color: #e9f3f4;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-details a:hover,
+    .contact-details a:focus-visible,
+    .text-link:hover,
+    .text-link:focus-visible {
+      color: var(--contact-cyan);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .contact-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(126, 216, 228, 0.46);
+      background: rgba(126, 216, 228, 0.06);
+      color: #ebf9fb;
+      text-decoration: none;
+      font: 10px var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact-action:hover,
+    .contact-action:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(126, 216, 228, 0.85);
+    }
+
+    .contact-action.secondary {
+      background: transparent;
+      border-color: rgba(215, 178, 120, 0.5);
+      color: #f0d2a1;
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border: 1px solid rgba(126, 216, 228, 0.35);
+      background: rgba(8, 17, 23, 0.85);
+      color: #dbebee;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .language-switch[hidden] {
+      display: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 960px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .contact-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <a class="identity" href="../index.html" aria-label="Forgotten Footprints home">
+      <img class="identity-mark" src="../logo/Pathfinders.jpeg" alt="" aria-hidden="true">
+      <span class="identity-copy"><strong>FORGOTTEN</strong><small>FOOTPRINTS <span> / </span> ARCHIVE</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menu">
+      <span class="menu-glyph" aria-hidden="true">☰</span>
+      <span class="menu-label" data-i18n="menuShort">Menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="../index.html" data-i18n="navHome">Home</a>
+      <a href="archive.html" data-i18n="navArchive">Archive</a>
+      <details class="nav-destinations">
+        <summary data-i18n="navDestinations">Destinations</summary>
+        <div class="nav-destination-menu">
+          <a href="moon.html" data-i18n="moon">Moon</a>
+          <a href="mars.html" data-i18n="mars">Mars</a>
+          <a href="deep-space.html" data-i18n="deepSpace">Deep Space</a>
+        </div>
+      </details>
+      <a href="timeline.html" data-i18n="navTimeline">Timeline</a>
+      <a href="discovery.html" data-i18n="navDiscovery">Discovery</a>
+      <a href="methodology.html" data-i18n="navMethodology">Methodology</a>
+      <a href="artifact.html" data-i18n="navDossier">Dossier</a>
+      <a href="contact.html" aria-current="page" data-i18n="navContact">Contact</a>
+      <a href="credits.html" data-i18n="navCredits">Credits</a>
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">
+        <span class="language-icon" aria-hidden="true">文</span>
+        <span data-language-label>العربية</span>
+      </button>
+    </nav>
+    <div class="header-utility-links" aria-label="Quick links">
+      <a href="contact.html">Contact</a>
+      <a href="credits.html">Credits</a>
+    </div>
+  </header>
+
+  <main id="main" class="platform-main">
+    <section class="page-intro contact-intro">
+      <div class="page-content" style="padding-bottom: 0;">
+        <p class="eyebrow" data-i18n="contactKicker">Contact</p>
+        <h1 data-i18n="pageTitle">Connect with our team</h1>
+        <p class="lede" data-i18n="pageText">The best way to contact our team is through WhatsApp or email.</p>
+        <div class="intro-meta" data-i18n="contactMeta">Team support · collaboration · media requests</div>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="contact-summary">
+        <div class="summary-card">
+          <span class="section-marker">01 / Approach</span>
+          <h2 data-i18n="summaryTitle">We are easy to reach.</h2>
+          <p data-i18n="summaryText">The best way to contact our team is through WhatsApp or email for quick replies and direct coordination.</p>
+        </div>
+        <div class="summary-card quick-links">
+          <a class="quick-link" href="https://wa.me/201001520430" target="_blank" rel="noopener"><span data-i18n="quickWhatsApp">WhatsApp</span><span aria-hidden="true">↗</span></a>
+          <a class="quick-link" href="mailto:ahmedmkamal1842010@gmail.com"><span data-i18n="quickEmail">Email</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="person-badge">Jana</span>
+            <span class="channel-badge" data-i18n="contactChannel">WhatsApp</span>
+          </div>
+          <div>
+            <h3>Jana</h3>
+            <p class="contact-role" data-i18n="roleJana">Project communications</p>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <strong data-i18n="labelPhone">Phone</strong>
+              <a href="tel:+201041540061">01041540061</a>
+            </li>
+            <li>
+              <strong data-i18n="labelEmail">Email</strong>
+              <a href="mailto:jana.atef0079@gmail.com">jana.atef0079@gmail.com</a>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/201041540061" target="_blank" rel="noopener" data-i18n="ctaWhatsApp">WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:jana.atef0079@gmail.com" data-i18n="ctaEmail">Email</a>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="person-badge">Ahmad</span>
+            <span class="channel-badge" data-i18n="contactChannel">WhatsApp</span>
+          </div>
+          <div>
+            <h3>Ahmad</h3>
+            <p class="contact-role" data-i18n="roleAhmad">Website developer</p>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <strong data-i18n="labelPhone">Phone</strong>
+              <a href="tel:+201001520430">01001520430</a>
+            </li>
+            <li>
+              <strong data-i18n="labelEmail">Email</strong>
+              <a href="mailto:ahmedmkamal1842010@gmail.com">ahmedmkamal1842010@gmail.com</a>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/201001520430" target="_blank" rel="noopener" data-i18n="ctaWhatsApp">WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:ahmedmkamal1842010@gmail.com" data-i18n="ctaEmail">Email</a>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="person-badge">Rania</span>
+            <span class="channel-badge" data-i18n="contactChannel">WhatsApp</span>
+          </div>
+          <div>
+            <h3>Rania</h3>
+            <p class="contact-role" data-i18n="roleRania">Project support</p>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <strong data-i18n="labelPhone">Phone</strong>
+              <a href="tel:+201064415624">01064415624</a>
+            </li>
+            <li>
+              <strong data-i18n="labelEmail">Email</strong>
+              <a href="mailto:raniahanyyy321@gmail.com">raniahanyyy321@gmail.com</a>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/201064415624" target="_blank" rel="noopener" data-i18n="ctaWhatsApp">WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:raniahanyyy321@gmail.com" data-i18n="ctaEmail">Email</a>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="person-badge">Abdelrahman</span>
+            <span class="channel-badge" data-i18n="contactChannel">WhatsApp</span>
+          </div>
+          <div>
+            <h3>Abdelrahman</h3>
+            <p class="contact-role" data-i18n="roleAbdel">Project support</p>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <strong data-i18n="labelPhone">Phone</strong>
+              <a href="tel:+201055901918">01055901918</a>
+            </li>
+            <li>
+              <strong data-i18n="labelEmail">Email</strong>
+              <a href="mailto:body456ai@gmail.com">body456ai@gmail.com</a>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/201055901918" target="_blank" rel="noopener" data-i18n="ctaWhatsApp">WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:body456ai@gmail.com" data-i18n="ctaEmail">Email</a>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="person-badge">Maryam</span>
+            <span class="channel-badge" data-i18n="contactChannel">WhatsApp</span>
+          </div>
+          <div>
+            <h3>Maryam</h3>
+            <p class="contact-role" data-i18n="roleMaryam">Project support</p>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <strong data-i18n="labelPhone">Phone</strong>
+              <a href="tel:+201001910312">01001910312</a>
+            </li>
+            <li>
+              <strong data-i18n="labelEmail">Email</strong>
+              <a href="mailto:mariamkhaled782010@gmail.com">mariamkhaled782010@gmail.com</a>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/201001910312" target="_blank" rel="noopener" data-i18n="ctaWhatsApp">WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:mariamkhaled782010@gmail.com" data-i18n="ctaEmail">Email</a>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="person-badge" data-i18n="generalBadge">Reach</span>
+            <span class="channel-badge" data-i18n="contactChannel">WhatsApp</span>
+          </div>
+          <div>
+            <h3 data-i18n="generalTitle">Quick response</h3>
+            <p class="contact-role" data-i18n="generalRole">We respond through direct messaging</p>
+          </div>
+          <ul class="contact-details">
+            <li>
+              <strong data-i18n="labelPreferred">Preferred</strong>
+              <a href="https://wa.me/201001520430" target="_blank" rel="noopener" data-i18n="preferredValue">WhatsApp: 01001520430</a>
+            </li>
+            <li>
+              <strong data-i18n="labelResponse">Response</strong>
+              <a href="mailto:ahmedmkamal1842010@gmail.com" data-i18n="responseValue">Email: ahmedmkamal1842010@gmail.com</a>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/201001520430" target="_blank" rel="noopener" data-i18n="ctaWhatsApp">WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:ahmedmkamal1842010@gmail.com" data-i18n="ctaEmail">Email</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main section-wrap">
+      <a class="identity footer-identity" href="../index.html">
+        <img class="identity-mark" src="../logo/Pathfinders.jpeg" alt="" aria-hidden="true">
+        <span class="identity-copy"><strong>FORGOTTEN</strong><small>FOOTPRINTS <span> / </span> ARCHIVE</small></span>
+      </a>
+      <p class="footer-message">Build with ❤️ by Ahmed Mohamed Kamal</p>
+      <a class="back-top" href="#main"><span data-i18n="backTop">Back to top</span><span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="footer-bottom section-wrap"><span>© <span data-year></span> <span data-i18n="footerName">Forgotten Footprints</span></span></div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        skip: 'Skip to content',
+        menuShort: 'Menu',
+        navHome: 'Home',
+        navArchive: 'Archive',
+        navDestinations: 'Destinations',
+        moon: 'Moon',
+        mars: 'Mars',
+        deepSpace: 'Deep Space',
+        navTimeline: 'Timeline',
+        navDiscovery: 'Discovery',
+        navMethodology: 'Methodology',
+        navDossier: 'Dossier',
+        navContact: 'Contact',
+        navCredits: 'Credits',
+        contactKicker: 'Contact',
+        pageTitle: 'Connect with our team',
+        pageText: 'The best way to contact our team is through WhatsApp or email.',
+        contactMeta: 'Team support · collaboration · media requests',
+        summaryTitle: 'We are easy to reach.',
+        summaryText: 'The best way to contact our team is through WhatsApp or email for quick replies and direct coordination.',
+        quickWhatsApp: 'WhatsApp',
+        quickEmail: 'Email',
+        contactChannel: 'WhatsApp',
+        roleJana: 'Project communications',
+        roleAhmad: 'Website developer',
+        roleRania: 'Project support',
+        roleAbdel: 'Project support',
+        roleMaryam: 'Project support',
+        labelPhone: 'Phone',
+        labelEmail: 'Email',
+        ctaWhatsApp: 'WhatsApp',
+        ctaEmail: 'Email',
+        generalBadge: 'Reach',
+        generalTitle: 'Quick response',
+        generalRole: 'We are easy to reach.',
+        labelPreferred: 'Preferred',
+        labelResponse: 'Response',
+        preferredValue: 'WhatsApp: 01001520430',
+        responseValue: 'Email: ahmedmkamal1842010@gmail.com',
+        backTop: 'Back to top',
+        footerName: 'Forgotten Footprints'
+      },
+      ar: {
+        skip: 'تخطي إلى المحتوى',
+        menuShort: 'القائمة',
+        navHome: 'الرئيسية',
+        navArchive: 'الأرشيف',
+        navDestinations: 'الوجهات',
+        moon: 'القمر',
+        mars: 'المريخ',
+        deepSpace: 'الفراغ',
+        navTimeline: 'الجدول الزمني',
+        navDiscovery: 'الاكتشاف',
+        navMethodology: 'المنهجية',
+        navDossier: 'ملف',
+        navContact: 'تواصل',
+        navCredits: 'الاعتمادات',
+        contactKicker: 'تواصل',
+        pageTitle: 'تواصل معنا',
+        pageText: 'أفضل طريقة للتواصل مع فريقنا هي عبر واتساب أو البريد الإلكتروني.',
+        contactMeta: 'الدعم · التعاون · طلبات الإعلام',
+        summaryTitle: 'من السهل التواصل معنا.',
+        summaryText: 'أفضل طريقة للتواصل مع فريقنا هي عبر واتساب أو البريد الإلكتروني للحصول على رد سريع وتنسيق مباشر.',
+        quickWhatsApp: 'واتساب',
+        quickEmail: 'بريد إلكتروني',
+        contactChannel: 'واتساب',
+        roleJana: 'التواصل والمتابعة',
+        roleAhmad: 'مطور الموقع',
+        roleRania: 'دعم المشروع',
+        roleAbdel: 'دعم المشروع',
+        roleMaryam: 'دعم المشروع',
+        labelPhone: 'الهاتف',
+        labelEmail: 'البريد',
+        ctaWhatsApp: 'واتساب',
+        ctaEmail: 'بريد',
+        generalBadge: 'الوصول',
+        generalTitle: 'استجابة سريعة',
+        generalRole: 'من السهل التواصل معنا.',
+        labelPreferred: 'المفضل',
+        labelResponse: 'الرد',
+        preferredValue: 'واتساب: 01001520430',
+        responseValue: 'البريد: ahmedmkamal1842010@gmail.com',
+        backTop: 'العودة للأعلى',
+        footerName: 'Forgotten Footprints'
+      }
+    };
+
+    const languageToggle = document.querySelector('[data-lang-toggle]');
+    const languageLabel = document.querySelector('[data-language-label]');
+    function setLanguage(lang) {
+      const isArabic = lang === 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.body.classList.toggle('is-arabic', isArabic);
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      languageLabel.textContent = isArabic ? 'EN' : 'العربية';
+      languageToggle.setAttribute('aria-label', isArabic ? 'Switch to English' : 'تبديل إلى العربية');
+      const nav = document.querySelector('.primary-nav');
+      if (nav) {
+        nav.style.direction = isArabic ? 'rtl' : 'ltr';
+      }
+    }
+
+    let currentLanguage = 'en';
+    languageToggle.addEventListener('click', () => {
+      currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+      setLanguage(currentLanguage);
+    });
+
+    setLanguage(currentLanguage);
+  </script>
+</body>
+</html>
