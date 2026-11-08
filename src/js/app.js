@@ -164,6 +164,12 @@
   if (languageButton) languageButton.addEventListener("click", app.toggleLanguage);
   doc.querySelectorAll("[data-year]").forEach(function (element) { element.textContent = String(new Date().getFullYear()); });
 
+  doc.querySelectorAll(".header-utility-links a").forEach(function (link) {
+    const href = (link.getAttribute("href") || "").toLowerCase();
+    if (href.indexOf("contact.html") >= 0) link.textContent = t("navContact");
+    if (href.indexOf("credits.html") >= 0) link.textContent = t("navCredits");
+  });
+
   // ---------------------------------------------------------------- presentation route
   const museumRoutes = [
     { key: "routeEntrance", file: "index.html", page: "entrance" },
