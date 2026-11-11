@@ -1932,8 +1932,8 @@
     if (!this.record) return;
     if (!this.record.modelKind || !Models.build) throw new Error("artifact model kind is missing");
     const model = Models.build(this.record.modelKind, this.record);
-    const yaws = { "lm-descent": 0.55, lrrr: 0.35, lrv: 0.72, "surveyor-lander": 0.55, "surveyor-camera": 0.02, opportunity: 0.62, "m20-backshell": 0.55 };
-    const pitches = { "lm-descent": 0.14, lrrr: 0.18, lrv: 0.22, "surveyor-lander": 0.14, "surveyor-camera": 0.10, opportunity: 0.20, "m20-backshell": 0.10 };
+    const yaws = { "lm-descent": 0.55, lrrr: 0.35, lrv: 0.72, "surveyor-lander": 0.55, "surveyor-camera": 0.02, opportunity: 0.62, "m20-backshell": 0.55, "mars3-lander": 0.55 };
+    const pitches = { "lm-descent": 0.14, lrrr: 0.18, lrv: 0.22, "surveyor-lander": 0.14, "surveyor-camera": 0.10, opportunity: 0.20, "m20-backshell": 0.10, "mars3-lander": 0.12 };
     this.initialYaw = yaws[this.record.modelKind] === undefined ? 0.55 : yaws[this.record.modelKind];
     this.initialPitch = pitches[this.record.modelKind] === undefined ? 0.14 : pitches[this.record.modelKind];
     if (this.mesh) {

@@ -331,6 +331,7 @@
     solarEdge: [0.30, 0.44, 0.60],
     dust: [0.44, 0.38, 0.31],
     dustLight: [0.55, 0.48, 0.39],
+    marsDust: [0.54, 0.43, 0.32],
     canopy: [0.84, 0.50, 0.24],
     canopyAlt: [0.86, 0.84, 0.78],
     harness: [0.88, 0.87, 0.82],
@@ -952,6 +953,75 @@
     return b;
   }
 
+  function mars3Lander() {
+    const b = new MeshBuilder();
+    // The Mars 3 lander was a compact Soviet descent craft. This version keeps the
+    // same conceptual exhibition style as the rest of the site, but the silhouette is
+    // shaped more like the real lander: a rounded central body, a flatter lower ring,
+    // a conical upper dome, a small instrument mast and three support legs.
+    b.beginPart(0);
+    b.addCylinder(translation(0, 0.12, 0), 1.00, 0.70, 0.92, 28, C.marsTan);
+    b.addCylinder(translation(0, -0.18, 0), 0.88, 0.88, 0.14, 28, C.dark);
+    b.addCylinder(translation(0, 0.58, 0), 0.68, 0.52, 0.20, 26, C.aluminumDark);
+    b.addCylinder(multiply(rotationX(Math.PI / 2), translation(0, 0.62, 0)), 0.18, 0.12, 0.46, 18, C.goldDark);
+    b.addBox(translation(0, 0.18, 0), 0.78, 0.10, 0.62, C.goldDark);
+    b.addBox(translation(0, 0.78, 0), 0.30, 0.10, 0.30, C.graphite);
+    for (let i = 0; i < 12; i++) {
+      const a = (i / 12) * Math.PI * 2 + Math.PI / 12;
+      const ca = Math.cos(a), sa = Math.sin(a);
+      b.addStrut([ca * 0.44, -0.06, sa * 0.44], [ca * 0.95, -0.72, sa * 0.95], 0.030, C.silverLight, 6);
+      b.addCylinder(translation(ca * 0.96, -0.78, sa * 0.96), 0.10, 0.10, 0.09, 10, C.aluminumDark);
+      b.addCylinder(translation(ca * 0.68, -0.34, sa * 0.68), 0.04, 0.04, 0.16, 8, C.silver);
+    }
+    b.addCylinder(translation(0, -0.78, 0), 0.96, 0.96, 0.10, 24, C.marsDust);
+    for (const z of [-0.32, 0.32]) {
+      b.addBox(translation(0, -0.44, z), 0.86, 0.06, 0.12, C.marsDust);
+    }
+
+    // Part 1 — Parachute canopy: the descent canopy attached to the lander during entry.
+    b.beginPart(1);
+    b.addDome(translation(0, 1.70, 0), 1.25, 0.62, 30, 9, C.canopy, C.canopyAlt);
+    b.addCylinder(translation(0, 1.48, 0), 1.18, 1.18, 0.15, 30, C.canopyAlt, false);
+    for (let i = 0; i < 16; i++) {
+      const a = (i / 16) * Math.PI * 2;
+      const ca = Math.cos(a), sa = Math.sin(a);
+      b.addCylinderBetween([ca * 1.05, 1.52, sa * 1.05], [ca * 0.18, 0.62, sa * 0.18], 0.012, C.harness, 4);
+    }
+    b.addCylinder(translation(0, 2.06, 0), 0.08, 0.05, 0.12, 12, C.canopy);
+
+    // Part 2 — Heat shield and separation ring: placed in the descent sequence.
+    b.beginPart(2);
+    b.addCylinder(translation(0, -0.90, 0), 1.26, 1.00, 0.20, 22, C.goldDark);
+    b.addCylinder(translation(0, -1.00, 0), 0.96, 0.96, 0.08, 18, C.silverLight);
+    for (let i = 0; i < 8; i++) {
+      const a = (i / 8) * Math.PI * 2;
+      b.addStrut([Math.cos(a) * 0.72, -0.82, Math.sin(a) * 0.72], [Math.cos(a) * 0.98, -0.54, Math.sin(a) * 0.98], 0.010, C.silver, 4);
+    }
+
+    // Part 3 — Surface camera and antenna mast: a compact mast and dish structure.
+    b.beginPart(3);
+    b.addStrut([0.28, 0.52, 0.18], [0.28, 1.08, 0.18], 0.025, C.silverLight, 6);
+    b.addCylinder(translation(0.28, 1.12, 0.18), 0.22, 0.16, 0.14, 16, C.white);
+    b.addBox(translation(0.28, 1.22, 0.18), 0.32, 0.04, 0.24, C.silver);
+    b.addCylinder(multiply(translation(0.28, 1.14, 0.18), rotationX(Math.PI / 2)), 0.12, 0.12, 0.04, 12, C.graphite);
+    b.addCylinder(multiply(translation(0.28, 1.15, 0.38), rotationX(Math.PI / 2)), 0.08, 0.08, 0.04, 10, C.gold);
+    b.addCylinder(multiply(translation(-0.46, 0.34, 0.14), rotationY(Math.PI / 2)), 0.18, 0.12, 0.20, 14, C.silverLight);
+
+    // Part 4 — PrOP-M crawler: a compact mobility unit carried by the lander and not deployed.
+    b.beginPart(4);
+    b.addBox(translation(0.54, -1.16, -0.96), 0.62, 0.14, 0.38, C.aluminum);
+    b.addBox(translation(0.54, -1.06, -0.96), 0.54, 0.08, 0.30, C.graphite);
+    for (const x of [-0.18, 0.18]) {
+      b.addCylinder(multiply(translation(0.54 + x, -1.26, -0.96), rotationZ(Math.PI / 2)), 0.09, 0.09, 0.08, 10, C.silverLight);
+      b.addBox(translation(0.54 + x, -1.38, -0.96), 0.22, 0.04, 0.12, C.aluminumDark);
+    }
+    b.addStrut([0.28, -1.12, -0.96], [0.80, -1.12, -0.96], 0.018, C.silver, 5);
+    b.addStrut([0.54, -0.98, -0.96], [0.54, -0.68, -0.96], 0.016, C.aluminumDark, 4);
+    b.addCylinder(translation(0.54, -0.60, -0.96), 0.10, 0.10, 0.08, 10, C.gold);
+
+    return b;
+  }
+
   const builders = {
     "lm-descent": lmDescent,
     lrv: lrv,
@@ -960,7 +1030,8 @@
     lrrr: lrrr,
     opportunity: opportunity,
     "m20-backshell": m20Backshell,
-    sojourner: sojourner
+    sojourner: sojourner,
+    "mars3-lander": mars3Lander
   };
 
   // ---------------------------------------------------------------- finalize

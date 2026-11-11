@@ -1507,6 +1507,78 @@ window.ForgottenFootprintsData = {
         { date: "1997-09-27", title: "Final data transmission received from Mars Pathfinder", titleAr: "استلام آخر إرسال بيانات من مارس باثفايندر", source: "https://science.nasa.gov/photojournal/mars-pathfinder-rover-traverse-image/" },
         { date: "1998-03-10", title: "Mars Pathfinder mission terminated", titleAr: "إنهاء مهمة مارس باثفايندر", source: "https://science.nasa.gov/photojournal/mars-pathfinder-rover-traverse-image/" }
       ]
+    },
+    {
+      id: "MARS-MARS3",
+      name: {
+        en: "Mars 3 lander and PrOP-M",
+        ar: "مركبة هبوط مارس 3 وPrOP-M"
+      },
+      mission: "Mars 3",
+      missionAr: "مارس 3",
+      missionId: "MARS-3",
+      missionLabel: { en: "Mars 3", ar: "مارس 3" },
+      world: "mars",
+      worldLabel: "Mars",
+      worldLabelAr: "المريخ",
+      recordType: "artifact",
+      type: "Soviet Mars lander with a mobile science package",
+      typeAr: "مركبة هبوط سوفيتية مع حزمة علمية متحركة",
+      status: "MISSION ENDED",
+      operationalStatus: "Landed successfully on 2 December 1971, transmitted for 14.5 seconds and then fell silent; the lander and the small PrOP-M walker were never confirmed to operate further.",
+      operationalStatusAr: "هبطت بنجاح في 2 ديسمبر 1971، وأرسلت إشارة لمدة 14.5 ثانية ثم توقفت؛ ولم تُؤكَّد مزيد من التشغيل للمركبة الصغيرة PrOP-M أو المركبة الهبوطية بعد ذلك.",
+      mode: "Landed robotic spacecraft",
+      modeAr: "مركبة آلية هبطت",
+      location: "Martian surface near the Mars 3 landing site; the exact position remains unconfirmed and no precise coordinate is plotted.",
+      locationAr: "سطح المريخ بالقرب من موقع هبوط مارس 3؛ ولا يزال الموقع الدقيق غير مؤكد ولا يُعرض إحداثي دقيق.",
+      lat: null,
+      lon: null,
+      locationConfidence: "The Mars 3 landing site remains unconfirmed. Soviet mission records describe a successful soft landing, while a 2013 HiRISE-based interpretation suggested a possible debris field of the parachute, heat shield, retrorocket and the lander itself. That identification remains unconfirmed and no exact final coordinate is plotted.",
+      locationConfidenceAr: "يظل موقع هبوط مارس 3 غير مؤكّد. وتصف سجلات المهمة السوفيتية هبوطاً ناعماً ناجحاً، بينما اقترح تفسير صور HiRISE عام 2013 احتمال وجود حقل حطام يتكوّن من المظلة والغطاء الحراري والصاروخ الراجع والمركبة نفسها. ولا يزال هذا التحديد غير مؤكّد، ولا يُعرض إحداثي نهائي دقيق.",
+      missionMarker: false,
+      markerLabel: "Mars 3 landing site — unconfirmed",
+      markerLabelAr: "موقع هبوط مارس 3 — غير مؤكّد",
+      story: {
+        en: "Mars 3 was the first spacecraft to achieve a soft landing on Mars. It launched on 28 May 1971 and landed on 2 December 1971 during a major global dust storm. After touchdown, it began transmitting a television image and other data, but the signal ended after only 14.5 seconds. The lander failed to provide useful surface science, and the cause of the failure remains unknown. The mission also carried a small mobile robotic explorer, PrOP-M, designed to move on skis over the Martian surface and measuring soil properties and radiation. Because the lander fell silent so quickly, PrOP-M was never deployed. The rover and lander remained on Mars as an unresolved, potentially recoverable historical site, and later HiRISE imagery prompted a 2013 re-examination of possible remains.",
+        ar: "كان مارس 3 أول مركبة تحقق هبوطاً ناعماً على المريخ. أُطلق في 28 مايو 1971، وهبط في 2 ديسمبر 1971 أثناء عاصفة ترابية كبرى شملت الكوكب. وبعد الهبوط بدأ إرسال صورة تلفزيونية وغيرها من البيانات، لكن الإشارة انقطعت بعد 14.5 ثانية فقط. ولم تُعطِ المركبة الهبوطية معلومات سطحية مفيدة، ولا يزال سبب الفشل غير معروف. كما حملت المهمة روبوتاً صغيراً متحركاً يُسمى PrOP-M، وكان مصمماً للمشي على الجليد/الرمل المريخي باستخدام الزلاجات، ويقيس خواص التربة والإشعاع. لأن المركبة الهبوطية توقفت عن الإرسال بسرعة، لم يُنشر الروبوت قط. وبقيت المركبة والهبوط على المريخ كمنطقة تاريخية غير محلولة، وقد حفّزت صور HiRISE لاحقاً على إعادة بحث في 2013 عن بقايا محتملة."
+      },
+      then: "First Soviet soft landing on Mars",
+      thenAr: "أول هبوط ناعم سوفيتي على المريخ",
+      missionStory: "Achieved the first soft landing on Mars but transmitted for only 14.5 seconds before the signal was lost.",
+      missionStoryAr: "حقق أول هبوط ناعم على المريخ، لكنه أرسل إشارة لمدة 14.5 ثانية فقط قبل انقطاعها.",
+      now: "The mission ended when the signal was lost; the exact lander position remains unconfirmed and no precise coordinate is plotted.",
+      nowAr: "انتهت المهمة عندما انقطعت الإشارة؛ ولا يزال الموقع الدقيق للمركبة غير مؤكّد ولا يُعرض إحداثي دقيق.",
+      significance: {
+        en: "Mars 3 was the first spacecraft to land softly on Mars, even though it returned almost no usable science. It also carried PrOP-M, one of the earliest attempts to build a mobile exploratory robot for another world, and its brief transmission remains a lasting symbol of early Soviet planetary exploration.",
+        ar: "كان مارس 3 أول مركبة تهبط بسلام على المريخ، رغم أنه أعاد معلومات علمية قليلة جداً. كما حمل الروبوت PrOP-M، وهو أحد أوائل المحاولات لبناء روبوت مستكشف متحرك لكوكب آخر، وتظل إشارته القصيرة رمزاً لفترة الاستكشاف الكوكبي السوفيتي المبكر."
+      },
+      evidence: {
+        en: "Soviet mission records describe a successful landing and a 14.5-second transmission before loss of signal. A 2013 re-examination of HiRISE imagery proposed a possible debris field including the lander, parachute, heat shield and retrorocket, but the identification remains unconfirmed. No precise final coordinate is asserted for the lander or the PrOP-M walker.",
+        ar: "تصف سجلات المهمة السوفيتية هبوطاً ناجحاً وإرسالاً دام 14.5 ثانية قبل فقدان الإشارة. وأُعيد فحص صور HiRISE في 2013 واقترح احتمال وجود حقل حطام يشمل المركبة والمظلة والغطاء الحراري والصاروخ الراجع، لكن التحديد لا يزال غير مؤكّد. ولا يُنسب إحداثي دقيق نهائي للمركبة الهبوطية أو الروبوت PrOP-M."
+      },
+      model: "conceptual",
+      modelKind: "mars3-lander",
+      modelNote: {
+        en: "Conceptual model of the Mars 3 lander and the PrOP-M crawler. The basic lander geometry, parachute, heat shield and retrorocket are represented schematically; the PrOP-M mobile package is shown as a conceptual walker rather than a precise engineering reconstruction.",
+        ar: "نموذج تصوري لمركبة هبوط مارس 3 والروبوت المتحرك PrOP-M. تمثيل هندسة المركبة والمظلة والغطاء الحراري والصاروخ الراجع بصورة تخطيطية، كما يُظهر الروبوت المتحرك بشكل تصوري لا كإعادة بناء هندسية دقيقة."
+      },
+      components: [
+        { anchor: [0, 0.25, 0.55], name: { en: "Lander body", ar: "هيكل المركبة" }, description: { en: "The lander carried the communications equipment, surface camera and science payload. The shape is schematic and not a reconstruction.", ar: "حملت المركبة الهبوطية معدات الاتصالات وكاميرا السطح وحزمة العلم. الشكل تخطيطي وليس إعادة بناء." } },
+        { anchor: [0, 1.2, 0.1], name: { en: "Parachute", ar: "المظلة" }, description: { en: "The descent parachute was used to slow the descent through the Martian atmosphere. The exact canopy arrangement is conceptual.", ar: "استُخدمت المظلة أثناء الهبوط لإبطاء الانخفاض عبر غلاف المريخ الجوي. ترتيب المظلة تخطيطي." } },
+        { anchor: [-0.65, 0.2, 0.25], name: { en: "Heat shield", ar: "الغطاء الحراري" }, description: { en: "The heat shield protected the craft during atmospheric entry and was later separated. Its exact condition is not known.", ar: "حمي الغطاء الحراري المركبة أثناء دخول الغلاف الجوي، ثم انفصل لاحقاً. حالته الدقيقة غير معروفة." } },
+        { anchor: [0.75, 0.15, -0.2], name: { en: "Terminal retrorocket", ar: "الصاروخ الراجع النهائي" }, description: { en: "The terminal descent engine helped reduce speed before landing. It may have remained in the debris field after touchdown.", ar: "ساعد محرك الهبوط النهائي في تقليل السرعة قبل الهبوط، وقد بقي في حقل الحطام بعد الهبوط." } },
+        { anchor: [-0.15, -0.35, -0.5], name: { en: "PrOP-M walker", ar: "الروبوت المشي PrOP-M" }, description: { en: "The small mobile robot was designed to traverse the surface on skis and measure soil and radiation. It was never deployed after the signal stopped.", ar: "كان الروبوت المتحرك الصغير مصممًا للمشي على الزلاجات وقياس التربة والإشعاع. ولم يُنشر بعد توقف الإشارة." } }
+      ],
+      related: [],
+      coordinateSource: "",
+      sources: [
+        { title: "Mars 3 — NASA NSSDC", url: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A" },
+        { title: "HiRISE — University of Arizona", url: "https://www.uahirise.org/" }
+      ],
+      events: [
+        { date: "1971-05-28", title: "Mars 3 launches toward Mars", titleAr: "إطلاق مارس 3 نحو المريخ", source: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A" },
+        { date: "1971-12-02", title: "Mars 3 lands on Mars", titleAr: "هبوط مارس 3 على المريخ", source: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A" }
+      ]
     }
   ]
 };
