@@ -61,7 +61,7 @@ Adaptive quality selects Low, Balanced or High from memory, core count, screen s
 
 The Archive page owns search, destination/status filters, sorting, result cards, comparison, mission family tree and explicit empty states. Destination pages have unique visual treatments and coordinate limitations. Timeline filters render the 35 sourced events. Discovery uses a policy-based quiz, glossary, myth/fact cards and saved learning notes. The reusable dossier resolves stable identifiers from the URL fragment and renders lifecycle, evidence, events, related records, mission family, components and sources.
 
-No record-level values should be filled without evidence. The verified dataset contains twenty-one records; the 47-record target is not a claim about completed research.
+No record-level values should be filled without evidence. The verified dataset contains twenty-two records; future expansion remains a separate research target and is never presented as completed work.
 
 ## The Forgotten Journey
 
@@ -87,7 +87,7 @@ Each artifact record contains:
 
 ## Scientific content policy
 
-The planned archive target is 47 individually identified artifact records: 25 Moon, 18 Mars, and 4 Deep Space. This is a target, not a statement that those records have been researched. Never fabricate records, citations, coordinates, dates, weights or technical specifications. Each physical object/component needs its own identity; a mission is not itself an artifact. Trace important claims to sources.
+The archive target remains a future research goal and is not a statement that those records have been researched. Never fabricate records, citations, coordinates, dates, weights or technical specifications. Each physical object/component needs its own identity; a mission is not itself an artifact. Trace important claims to sources.
 
 Coordinates must be labelled verified, approximate or inferred with provenance and uncertainty. Distinguish recovered hardware from hardware remaining on another world. Do not classify active rovers as abandoned. Identify passive laser retroreflectors as passive scientific instruments.
 
@@ -105,7 +105,7 @@ Apply a status only when evidence supports it. These categories describe differe
 
 ## Completed record identities
 
-The verified dataset currently holds twenty-one individually sourced records (seventeen Moon, four Mars, none Deep Space):
+The verified dataset currently holds twenty-two individually sourced records (seventeen Moon, five Mars, none Deep Space):
 
 Moon — Apollo hardware:
 

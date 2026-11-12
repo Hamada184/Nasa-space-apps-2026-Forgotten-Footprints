@@ -14,7 +14,7 @@ For a controlled demo of the adaptive 3D tiers, append `?quality=low`, `?quality
 
 ## What is implemented
 
-- **Twenty-one verified artifact records** (17 Moon, 4 Mars, 0 Deep Space) and **35 sourced timeline events**. The 47-record breakdown remains a research target, not a claim of completed research.
+- **Twenty-two verified artifact records** (17 Moon, 5 Mars, 0 Deep Space) and **35 sourced timeline events**.
 - **Real WebGL 3D**: an interactive Moon with procedural craters and sourced Apollo/Surveyor markers; a Mars globe with a distinctive procedural surface and a Mars 2020 mission marker; a deep-space star field with a schematic Sun, heliopause rings and a distant galaxy.
 - **Eight distinct artifact chambers**: Apollo 11 descent stage, Apollo 11 retroreflector, Apollo 15 Lunar Roving Vehicle, Surveyor 3 lander structure, recovered Surveyor 3 camera, Sojourner rover, Opportunity rover, and the Mars 2020 backshell/parachute. Each has a recognisable procedural assembly, drag/zoom/reset controls, keyboard access and selectable components. The models are clearly labelled conceptual, not engineering reconstructions.
 - **Scientific dossiers** with object identity, mission, type, status, location and coordinate confidence, original role, present state, significance, evidence, lifecycle, components, events, related records, mission family and source links.
