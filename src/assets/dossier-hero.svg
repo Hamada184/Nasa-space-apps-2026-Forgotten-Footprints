@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual lunar instrument lander</title>
+  <desc id="desc">An original, generic line illustration of a compact instrument lander with a faceted body, four landing struts, and a small antenna. It does not depict a specific artifact or mission.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#142936"/><stop offset=".52" stop-color="#0b1722"/><stop offset="1" stop-color="#111927"/></linearGradient>
+    <linearGradient id="metal" x2=".8" y2="1"><stop stop-color="#c1b79c"/><stop offset=".5" stop-color="#69747a"/><stop offset="1" stop-color="#2c3941"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0v42" fill="none" stroke="#a4c4c8" stroke-opacity=".08"/></pattern>
+    <filter id="soft" x="-.3" y="-.3" width="1.6" height="1.6"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v760H0z"/><path fill="url(#grid)" d="M0 0h1200v760H0z"/>
+  <ellipse cx="612" cy="405" rx="330" ry="230" fill="#7eabb0" opacity=".08" filter="url(#soft)"/>
+  <g fill="none" stroke="#82bdc2" stroke-opacity=".47" stroke-width="2"><ellipse cx="604" cy="385" rx="385" ry="162" transform="rotate(-18 604 385)"/><path d="M170 554 360 523m478-261 164-54M333 201h123m402 422h144" stroke-dasharray="5 10"/></g>
+  <g stroke="#c4c0ad" stroke-width="2" stroke-linejoin="round">
+    <path fill="url(#metal)" d="m518 286 105-49 113 48-105 53z"/><path fill="#657177" d="M518 286v93l113 53v-94z"/><path fill="#34434c" d="m631 338 105-53v94l-105 53z"/>
+    <path fill="#26343b" d="m540 297 83-39 81 34-84 42z"/>
+    <path fill="#d0a36c" d="m553 380 12 6-77 115-13-5zm126 2 12-6 75 115-13 6z"/><path fill="#b8aa8b" d="m485 496 47 7 9 10-62-1zm265 1-47 7-9 10 62-1z"/>
+    <path fill="#849196" d="m518 362-94 70 8 9 110-62m157-17 91 58-8 10-105-49"/>
+    <path fill="none" stroke="#d0a36c" d="M624 237v-54l39-32m-39 32-28-24"/><circle cx="664" cy="148" r="14" fill="#a8b6b5"/><circle cx="664" cy="148" r="5" fill="#d0a36c"/>
+    <path fill="#25333b" d="m541 323 51 24v24l-51-24zm111 23 57-28v26l-57 29z"/>
+  </g>
+  <g fill="none" stroke="#d0a36c" stroke-width="2"><path d="m522 281-158-83h-94m404-19 112-80h90m-287 415v68H468"/><circle cx="522" cy="281" r="5" fill="#d0a36c"/><circle cx="786" cy="99" r="5" fill="#d0a36c"/><circle cx="483" cy="582" r="5" fill="#d0a36c"/></g>
+  <g fill="#d0a36c"><circle cx="130" cy="210" r="3"/><circle cx="1040" cy="125" r="3"/><circle cx="810" cy="663" r="3"/></g>
+  <g stroke="#9db2b6" stroke-opacity=".42" fill="none"><path d="M84 660h125m-62-62v124M1045 704h90m-45-45v90"/></g>
+</svg>

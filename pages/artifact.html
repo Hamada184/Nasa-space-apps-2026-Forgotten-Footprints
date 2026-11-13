@@ -8,16 +8,16 @@
 <title>Artifact Dossier — Forgotten Footprints</title>
 <link rel="icon" type="image/jpeg" sizes="32x32" href="../logo/Pathfinders.jpeg">
 <link rel="shortcut icon" type="image/jpeg" href="../logo/Pathfinders.jpeg">
-<link rel="stylesheet" href="../src/css/base.css?v=20261108-r7">
-<link rel="stylesheet" href="../src/css/layout.css?v=20261108-r7">
-<link rel="stylesheet" href="../src/css/platform.css?v=20261108-r7">
-<script defer src="../src/js/locales.js?v=20261108-r7"></script>
-<script defer src="../src/js/i18n.js?v=20261108-r7"></script>
-<script defer src="../src/js/archive-data.js?v=20261108-r7"></script>
-<script defer src="../src/js/app.js?v=20261108-r7"></script>
-<script defer src="../src/js/museum-models.js?v=20261108-r7"></script>
-<script defer src="../src/js/museum3d.js?v=20261108-r7"></script>
-<script defer src="../src/js/story.js?v=20261108-r7"></script>
+<link rel="stylesheet" href="../src/css/base.css?v=20261113-r8">
+<link rel="stylesheet" href="../src/css/layout.css?v=20261113-r8">
+<link rel="stylesheet" href="../src/css/platform.css?v=20261113-r8">
+<script defer src="../src/js/locales.js?v=20261113-r8"></script>
+<script defer src="../src/js/i18n.js?v=20261113-r8"></script>
+<script defer src="../src/js/archive-data.js?v=20261113-r8"></script>
+<script defer src="../src/js/app.js?v=20261113-r8"></script>
+<script defer src="../src/js/museum-models.js?v=20261113-r8"></script>
+<script defer src="../src/js/museum3d.js?v=20261113-r8"></script>
+<script defer src="../src/js/story.js?v=20261113-r8"></script>
 </head>
 <body data-title-key="dossierTitle">
 <a class="skip-link" href="#main" data-i18n="skip"></a>
@@ -85,7 +85,10 @@
         </div>
       </div>
       <div class="journey-body" id="journey-body" data-journey-body>
-        <p class="journey-intro" data-i18n="journeyIntro"></p>
+        <ul class="journey-intro-points">
+          <li data-i18n="journeyIntro"></li>
+          <li data-i18n="journeySourceNote"></li>
+        </ul>
         <div class="journey-progress" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" data-journey-progress><span></span></div>
         <nav class="journey-nav" data-journey-nav></nav>
         <div class="journey-panel" data-journey-panel>

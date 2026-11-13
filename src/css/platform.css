@@ -119,8 +119,19 @@ h1,h2,.page-intro h1,.home-hero h1,.editorial-copy h2,.content-heading h2{font-f
 .deep-legend-row{display:flex;gap:8px;align-items:flex-start;font-size:9px;line-height:1.55;color:#9db0b8;margin:5px 0}
 .deep-legend-dot{width:5px;height:5px;border-radius:50%;background:#79d5dc;flex:none;margin-top:5px}
 .deep-legend-link{display:inline-block;margin-top:9px;font-size:10px;color:#e0c39f}
+.page-intro.dossier-atmosphere{--destination-image:url("../assets/dossier-hero.svg");background-image:linear-gradient(90deg,rgba(7,17,27,.96),rgba(7,17,27,.8) 48%,rgba(7,17,27,.18)),var(--destination-image);background-position:center 56%}
+.journey-intro-points{list-style:none;margin:16px 0 18px;padding:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border:1px solid rgba(208,163,108,.32);border-radius:10px;background:rgba(3,10,16,.58)}
+.journey-intro-points li{display:flex;align-items:flex-start;gap:11px;margin:0;color:#c7d3d8;line-height:1.7}
+.journey-intro-points li::before{content:"";width:13px;height:13px;flex:0 0 13px;margin-top:.35em;border:2px solid var(--amber);border-radius:50%;box-shadow:0 0 0 3px rgba(208,163,108,.08)}
+@media(max-width:640px){.journey-intro-points{grid-template-columns:1fr;padding:13px;gap:10px}}
+.opening-coordinate{position:static;z-index:1;display:flex;align-items:center;gap:11px;width:max-content;max-width:100%;margin:8px 0 18px;padding:8px 11px;border-inline-start:1px solid var(--amber);background:rgba(4,10,15,.42);backdrop-filter:blur(8px);writing-mode:horizontal-tb;direction:ltr;font-size:8px;letter-spacing:.14em}
+.opening-copy .eyebrow + .opening-coordinate{margin:8px 0 18px}
+.opening-coordinate i{width:24px;height:1px;background:linear-gradient(90deg,var(--amber),transparent)}
+@media(max-width:760px){.opening-coordinate{max-width:100%;gap:7px;padding:8px 10px;font-size:7px}.opening-coordinate i{width:13px}}
 .deep-legend-link:hover{text-decoration:underline}
 .artifact-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:14px}
+body:not(.presentation-mode) .museum-room-artifact .artifact-actions,body:not(.presentation-mode) .museum-room-artifact .scene-controls{transform:translateY(-8px)}
+body:not(.presentation-mode) .museum-room-artifact .scene-controls{margin-top:10px}
 .artifact-actions .save-artifact{margin:0}
 .model-badge{font:8px var(--mono);letter-spacing:.1em;color:#b99a73;border:1px solid rgba(185,154,115,.35);padding:7px 9px}
 .artifact-actions .text-link{font-size:11px}
