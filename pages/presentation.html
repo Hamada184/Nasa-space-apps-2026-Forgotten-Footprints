@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111b">
+  <meta name="description" content="The Cosmic Pathfinders project presentation, embedded from Canva.">
+  <title>Cosmic Pathfinders — Project Presentation — Forgotten Footprints</title>
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="../logo/Pathfinders.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="../logo/Pathfinders.jpeg">
+  <link rel="stylesheet" href="../src/css/base.css?v=20261108-r7">
+  <link rel="stylesheet" href="../src/css/layout.css?v=20261108-r7">
+  <link rel="stylesheet" href="../src/css/platform.css?v=20261108-r7">
+  <style>
+    :root {
+      --presentation-panel: rgba(10, 19, 26, 0.94);
+      --presentation-line: rgba(157, 190, 201, 0.2);
+      --presentation-soft: #9fb0b7;
+      --presentation-gold: #d7b278;
+    }
+
+    .presentation-intro {
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--edge);
+      background: linear-gradient(90deg, rgba(7, 17, 27, 0.98), rgba(7, 17, 27, 0.86) 42%, rgba(7, 17, 27, 0.3)), url("../src/assets/deep-field.svg") center 52% / cover no-repeat;
+    }
+
+    .presentation-hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+    }
+
+    .presentation-intro h1 {
+      max-width: 980px;
+      font-size: clamp(44px, 7vw, 92px);
+    }
+
+    .presentation-intro .lede {
+      max-width: 720px;
+    }
+
+    .presentation-intro::before {
+      width: min(48vw, 660px);
+      inset-inline-end: 4%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid rgba(126, 216, 228, 0.17);
+      background: transparent;
+      box-shadow: 0 0 0 32px rgba(126, 216, 228, 0.025), 0 0 0 96px rgba(126, 216, 228, 0.018);
+    }
+
+    .presentation-intro::after {
+      display: none;
+    }
+
+    .is-arabic .presentation-intro {
+      background-image: linear-gradient(270deg, rgba(7, 17, 27, 0.98), rgba(7, 17, 27, 0.86) 42%, rgba(7, 17, 27, 0.3)), url("../src/assets/deep-field.svg");
+    }
+
+    .presentation-content {
+      padding-top: 54px;
+    }
+
+    .presentation-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(16px, 2.6vw, 30px);
+      border: 1px solid var(--presentation-line);
+      background: linear-gradient(145deg, rgba(13, 27, 35, 0.95), rgba(7, 14, 20, 0.96));
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .presentation-panel::before {
+      content: "";
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), rgba(126, 216, 228, 0) 55%, rgba(215, 178, 120, 0.8));
+    }
+
+    .presentation-panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 6px 2px 26px;
+    }
+
+    .presentation-panel-head h2 {
+      margin: 10px 0 12px;
+      font: 400 clamp(26px, 3.4vw, 42px)/1.12 var(--display);
+      letter-spacing: -0.04em;
+    }
+
+    .presentation-panel-head p:not(.eyebrow) {
+      max-width: 720px;
+      margin: 0;
+      color: var(--presentation-soft);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .presentation-mark {
+      flex: none;
+      padding-inline-start: 14px;
+      border-inline-start: 1px solid rgba(215, 178, 120, 0.4);
+      color: var(--presentation-gold);
+      font: 9px var(--mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .presentation-frame {
+      position: relative;
+      height: auto;
+      /* Reserve room below the 16:9 slide for Canva's control bar. */
+      padding-bottom: 80px;
+      overflow: hidden;
+      border: 1px solid rgba(126, 216, 228, 0.22);
+      background: #02070c;
+    }
+
+    .presentation-frame::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    .presentation-frame iframe {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #02070c;
+    }
+
+    .presentation-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 15px;
+      padding: 24px;
+      background: radial-gradient(ellipse at center, rgba(18, 38, 49, 0.9), #061019 72%);
+      color: #8fa4ad;
+      font: 10px var(--mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      pointer-events: none;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .presentation-frame.is-loaded .presentation-loading {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .presentation-spinner {
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(126, 216, 228, 0.24);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: presentationSpin 1s linear infinite;
+    }
+
+    .is-arabic .presentation-loading,
+    .is-arabic .presentation-external-note,
+    .is-arabic .presentation-mark {
+      font-family: system-ui, "Segoe UI", Tahoma, Arial, sans-serif;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .presentation-panel-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px 2px 2px;
+    }
+
+    .presentation-fallback {
+      max-width: 580px;
+      margin: 0;
+      color: #91a2aa;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .presentation-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .presentation-external-note {
+      color: #7f929b;
+      font: 9px var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes presentationSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 760px) {
+      .presentation-intro {
+        min-height: 500px;
+      }
+
+      .presentation-intro::before {
+        display: none;
+      }
+
+      .presentation-content {
+        padding-top: 38px;
+      }
+
+      .presentation-panel-head {
+        display: block;
+        padding-bottom: 20px;
+      }
+
+      .presentation-mark {
+        display: inline-block;
+        margin-top: 18px;
+        border-inline-start: 0;
+        padding-inline-start: 0;
+      }
+
+      .presentation-frame {
+        padding-bottom: 72px;
+      }
+
+      .presentation-panel-foot {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .presentation-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .presentation-actions .button {
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .presentation-spinner {
+        animation: none;
+      }
+
+      .presentation-loading {
+        transition: none;
+      }
+    }
+  </style>
+  <script defer src="../src/js/locales.js?v=20261113-r8"></script>
+  <script defer src="../src/js/i18n.js?v=20261113-r8"></script>
+  <noscript><style>.presentation-loading { display: none; }</style></noscript>
+</head>
+<body data-title-key="presentationTitle">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <a class="identity" href="../index.html" aria-label="Forgotten Footprints home" data-i18n-aria="brandHome">
+      <img class="identity-mark" src="../logo/Pathfinders.jpeg" alt="" aria-hidden="true">
+      <span class="identity-copy"><strong>FORGOTTEN</strong><small>FOOTPRINTS <span> / </span> ARCHIVE</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menu">
+      <span class="menu-glyph" aria-hidden="true">☰</span>
+      <span class="menu-label" data-i18n="menuShort">Menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-i18n-aria="primaryNav">
+      <a href="../index.html" data-i18n="navHome">Home</a>
+      <a href="archive.html" data-i18n="navArchive">Archive</a>
+      <details class="nav-destinations">
+        <summary data-i18n="navDestinations">Destinations</summary>
+        <div class="nav-destination-menu">
+          <a href="moon.html" data-i18n="moon">Moon</a>
+          <a href="mars.html" data-i18n="mars">Mars</a>
+          <a href="deep-space.html" data-i18n="deepSpace">Deep Space</a>
+        </div>
+      </details>
+      <a href="timeline.html" data-i18n="navTimeline">Timeline</a>
+      <a href="discovery.html" data-i18n="navDiscovery">Discovery</a>
+      <a href="methodology.html" data-i18n="navMethodology">Methodology</a>
+      <a href="artifact.html" data-i18n="navDossier">Dossier</a>
+      <a href="presentation.html" aria-current="page" data-i18n="navPresentation">Presentation</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+      <a href="credits.html" data-i18n="navCredits">Credits</a>
+      <button class="language-toggle" type="button" data-lang-toggle data-i18n-aria="languageSwitch" aria-label="Switch language to Arabic">
+        <span class="language-icon" aria-hidden="true">文</span>
+        <span data-language-label>العربية</span>
+      </button>
+    </nav>
+    <div class="header-utility-links" aria-label="Quick links">
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+      <a href="credits.html" data-i18n="navCredits">Credits</a>
+    </div>
+  </header>
+
+  <main id="main" class="platform-main presentation-main">
+    <section class="page-intro presentation-intro">
+      <div class="presentation-hero">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span><span data-i18n="presentationPageKicker">PROJECT PRESENTATION · NASA SPACE APPS 2026 · CAIRO</span></p>
+        <h1 data-i18n="presentationTitle">Cosmic Pathfinders — Project Presentation</h1>
+        <p class="lede" data-i18n="presentationPageIntro">The complete Cosmic Pathfinders project presentation. Browse the slides here, or open it directly in Canva for the full viewing experience.</p>
+      </div>
+    </section>
+
+    <section class="page-content presentation-content">
+      <article class="presentation-panel">
+        <header class="presentation-panel-head">
+          <div>
+            <p class="eyebrow" data-i18n="presentationViewerLabel">Embedded presentation</p>
+            <h2 data-i18n="presentationViewerTitle">The presentation, in full</h2>
+            <p data-i18n="presentationViewerText">Use Canva’s controls inside the viewer to move between slides or enter full screen.</p>
+          </div>
+          <span class="presentation-mark" aria-hidden="true">CANVA / EMBED</span>
+        </header>
+
+        <div class="presentation-frame" data-presentation-frame>
+          <div class="presentation-loading" data-presentation-loading aria-hidden="true">
+            <span class="presentation-spinner"></span>
+            <span data-i18n="presentationLoading">Loading presentation…</span>
+          </div>
+          <iframe
+            title="Cosmic Pathfinders project presentation (Canva)"
+            data-i18n-title="presentationFrameTitle"
+            src="https://www.canva.com/design/DAHazYI7rG4/PkJmNcuYRDeHOC2vdVNd0g/view?embed"
+            loading="lazy"
+            allow="fullscreen"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            aria-describedby="presentation-fallback"></iframe>
+        </div>
+
+        <div class="presentation-panel-foot">
+          <p class="presentation-fallback" id="presentation-fallback" data-i18n="presentationFallback">If the viewer does not appear, open the presentation directly in Canva using the button below.</p>
+          <div class="presentation-actions">
+            <a class="button button-primary" href="https://canva.link/cosmic-pathfinders" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="presentationOpen">Open Presentation in Canva</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <span class="presentation-external-note" data-i18n="presentationExternalNote">Opens in a new tab on canva.com</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main section-wrap">
+      <a class="identity footer-identity" href="../index.html">
+        <img class="identity-mark" src="../logo/Pathfinders.jpeg" alt="" aria-hidden="true">
+        <span class="identity-copy"><strong>FORGOTTEN</strong><small>FOOTPRINTS <span> / </span> ARCHIVE</small></span>
+      </a>
+      <p class="footer-message">Build with ❤️ by Ahmed Mohamed Kamal</p>
+      <a class="back-top" href="#main"><span data-i18n="backTop">Back to top</span><span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="footer-bottom section-wrap"><span>© <span data-year></span> <span data-i18n="footerName">Forgotten Footprints</span></span></div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menuButton = document.querySelector(".menu-toggle");
+      var navigation = document.querySelector(".primary-nav");
+      if (menuButton && navigation) {
+        menuButton.addEventListener("click", function () {
+          var open = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!open));
+          navigation.classList.toggle("is-open", !open);
+        });
+        navigation.addEventListener("click", function (event) {
+          if (event.target.closest("a")) {
+            navigation.classList.remove("is-open");
+            menuButton.setAttribute("aria-expanded", "false");
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && navigation.classList.contains("is-open")) {
+            navigation.classList.remove("is-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.focus();
+          }
+        });
+      }
+
+      var languageToggle = document.querySelector(".language-toggle");
+      if (languageToggle && window.ForgottenFootprints) {
+        languageToggle.addEventListener("click", window.ForgottenFootprints.toggleLanguage);
+      }
+
+      document.querySelectorAll("[data-year]").forEach(function (element) {
+        element.textContent = String(new Date().getFullYear());
+      });
+
+      var frame = document.querySelector("[data-presentation-frame]");
+      var iframe = frame && frame.querySelector("iframe");
+      if (frame && iframe) {
+        var reveal = function () { frame.classList.add("is-loaded"); };
+        iframe.addEventListener("load", reveal);
+        window.setTimeout(reveal, 4000);
+      }
+    });
+  </script>
+</body>
+</html>

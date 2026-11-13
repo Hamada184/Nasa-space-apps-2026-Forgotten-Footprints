@@ -8,7 +8,7 @@ This is an independent educational project. It does not claim NASA endorsement, 
 
 ## Open the site
 
-Double-click `index.html`, or open it directly in a modern browser. Every destination is a separate HTML document under `pages/`; links and assets use relative local paths. No server, build step, installation, external service, CDN, or network access is required at runtime.
+Double-click `index.html`, or open it directly in a modern browser. Every destination is a separate HTML document under `pages/`; links and assets use relative local paths. No server, build step, installation, CDN, or external dependency is required. All core experiences work offline from local files. The only network-backed feature is the optional Canva presentation embed on `pages/presentation.html`; if Canva is unavailable, that page shows a fallback note and an external link to open the presentation.
 
 For a controlled demo of the adaptive 3D tiers, append `?quality=low`, `?quality=balanced` or `?quality=high` to a gallery URL (for example `pages/moon.html?quality=high`). Without the parameter the renderer chooses a tier from the device.
 
@@ -22,6 +22,7 @@ For a controlled demo of the adaptive 3D tiers, append `?quality=low`, `?quality
 - **Moon and Mars marker clusters** that open the corresponding records instead of pretending a landing pin is the exact position of every component.
 - **Discovery journal** for saving artifacts, plus learning notes and a policy-based quiz. Browser storage is best-effort with an in-memory fallback.
 - **Guided presentation mode** with a nine-stop route and previous/next controls, a glossary, myth-versus-fact cards and source drawers.
+- **Bilingual project presentation page** with the official Canva embed, a responsive viewer, a loading treatment, an offline fallback note and a button to open the presentation in Canva.
 - **English/Arabic parity and RTL**, responsive layouts, reduced-motion support and keyboard-accessible controls.
 
 ## Scientific policy
@@ -36,9 +37,9 @@ For a controlled demo of the adaptive 3D tiers, append `?quality=low`, `?quality
 
 ```text
 index.html
-pages/        archive, moon, mars, deep-space, timeline, discovery, methodology, artifact
+pages/        archive, artifact, contact, credits, deep-space, discovery, mars, methodology, moon, presentation, timeline
 src/css/      base, layout, platform
-src/js/       locales, i18n, archive-data, app, museum-models, museum3d
+src/js/       locales, i18n, archive-data, app, museum-models, museum3d, story
 src/locales/  en.json and ar.json editorial copies
 src/assets/   original local SVG illustrations and asset manifest
 docs/         architecture, structure, plan & routes, components, and roadmap
@@ -46,6 +47,6 @@ docs/         architecture, structure, plan & routes, components, and roadmap
 
 ## Verification status
 
-The project was exercised in Chrome 156 headless with SwiftShader and `file://` URLs: all pages loaded without JavaScript exceptions, every WebGL scene initialised, all eight artifact models rendered, the Moon and Mars markers projected, dossier/compare/family/journal features populated, Arabic RTL re-rendered dynamically, the no-WebGL fallback appeared correctly with WebGL disabled, context loss/restoration recovered, and a 390×844 mobile emulation showed no horizontal overflow. Real-GPU performance and Firefox/Safari were not tested in this environment.
+The project was exercised in Chrome 157 headless with SwiftShader and `file://` URLs: all pages loaded without JavaScript exceptions, every WebGL scene initialised, all eight artifact models rendered, the Moon and Mars markers projected, dossier/compare/family/journal features populated, Arabic RTL re-rendered dynamically, the no-WebGL fallback appeared correctly with WebGL disabled, and context loss/restoration recovered. The presentation page was checked at emulated widths of 375, 430, 768, 1366 and 1920 pixels, with 375, 430, 768 and 1366 checked in both languages: the Canva frame returned HTTP 200 and rendered the first slide, the loading overlay cleared, the localized iframe title and external link were correct, and no horizontal overflow appeared. A Canva-blocked run showed the fallback note and external link with no overflow. Firefox, Safari, real mobile devices and real-GPU performance were not tested in this environment; the Canva viewer requires network access and its availability is controlled by Canva.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md), [docs/PLAN_ROUTES_TECH.md](docs/PLAN_ROUTES_TECH.md), and [docs/COMPONENTS.md](docs/COMPONENTS.md). Source/asset notes are in [src/assets/ASSET-SOURCES.md](src/assets/ASSET-SOURCES.md).

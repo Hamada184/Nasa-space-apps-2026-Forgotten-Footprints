@@ -35,6 +35,10 @@
       const value = dictionary[element.dataset.i18nPlaceholder];
       if (value !== undefined) element.setAttribute("placeholder", value);
     });
+    document.querySelectorAll("[data-i18n-title]").forEach(function (element) {
+      const value = dictionary[element.dataset.i18nTitle];
+      if (value !== undefined) element.setAttribute("title", value);
+    });
     const pageTitleKey = document.body && document.body.dataset.titleKey;
     if (pageTitleKey && dictionary[pageTitleKey]) document.title = "Forgotten Footprints — " + dictionary[pageTitleKey];
     document.querySelectorAll("[data-language-label]").forEach(function (element) {

@@ -2,7 +2,7 @@
 
 ## Runtime
 
-The primary launch path is direct browser opening of `index.html`. Every major experience is its own HTML document and cross-page navigation uses relative anchors. Use vanilla HTML, CSS and regular browser scripts only. Do not require a server, backend, build tool, install, network access, modules, imports or runtime fetches.
+The primary launch path is direct browser opening of `index.html`. Every major experience is its own HTML document and cross-page navigation uses relative anchors. Use vanilla HTML, CSS and regular browser scripts only. Do not require a server, backend, build tool, install, modules, imports or runtime fetches. Core experiences must remain local; the only network-backed feature is the official Canva embed on `pages/presentation.html`, which must degrade gracefully when offline or blocked.
 
 Load localization and archive data from local JavaScript files before `i18n.js` and `app.js`. The dictionaries are exposed through `window.ForgottenFootprintsLocales`; the artifact dataset is `window.ForgottenFootprintsData`. Keep interface text and artifact records separate. Use `try/catch` around browser storage access; preserve current-session behaviour in memory if local storage is blocked. The dossier uses an identifier in the URL fragment, e.g. `pages/artifact.html#MOON-AP11-LMDS`.
 
@@ -23,6 +23,7 @@ Load localization and archive data from local JavaScript files before `i18n.js` 
     mars.html
     methodology.html
     moon.html
+    presentation.html
     timeline.html
   src/
     css/                 base.css, layout.css, platform.css
@@ -39,7 +40,7 @@ Load localization and archive data from local JavaScript files before `i18n.js` 
     ROADMAP.md
 ```
 
-The site is a multi-page, direct-open experience with ten standalone HTML documents under the root and `pages/` folders. `index.html` and the gallery/dossier pages load `museum-models.js` before `museum3d.js`. The model file has no DOM dependency; the renderer creates WebGL contexts and procedural textures at runtime. No runtime asset is loaded from the network.
+The site is a multi-page, direct-open experience with twelve standalone HTML documents: `index.html` plus eleven pages under `pages/`. `index.html` and the gallery/dossier pages load `museum-models.js` before `museum3d.js`. The model file has no DOM dependency; the renderer creates WebGL contexts and procedural textures at runtime. Apart from the public Canva embed on `pages/presentation.html`, no runtime asset is loaded from the network.
 
 ## 3D rendering
 
